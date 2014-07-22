@@ -1,4 +1,4 @@
-一种基于改进的KNN网站分类系统，特点是快速、高准确率
+一种基于改进的KNN网站分类系统(高效、高速)
 =
 
 1.简介
@@ -8,9 +8,9 @@
 2.系统架构
 -
 ####（1）用户角度
-![github](http://github.com/unicorn.png "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/user.tiff "github")  
 ####（2）系统角度
-![github](http://github.com/unicorn.png "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/sys.tiff "github")  
 3.各模块介绍
 -
 ####（1） 爬虫模块功能与技术
@@ -30,11 +30,11 @@
 4.效果演示（界面太挫。。）
 -
 ####系统界面
-![github](http://github.com/unicorn.png "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/main.tiff "github")  
 ####简单输入（真实使用时，以CSV格式导入大量URL，为演示方便，这里是为了演示方便）
-![github](http://github.com/unicorn.png "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/input.tiff "github")  
 ####输出
-![github](http://github.com/unicorn.png "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/outcoming.tiff "github")  
 5.详细设计
 -
 参见：
