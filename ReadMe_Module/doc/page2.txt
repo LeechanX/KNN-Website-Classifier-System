@@ -1,0 +1,4 @@
+host,user,password,
+DB name,DB port:
+均为数据库连接参数的设置。
+推荐MySQL数据库。

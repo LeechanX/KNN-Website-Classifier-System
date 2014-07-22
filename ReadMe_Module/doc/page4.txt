@@ -1,0 +1,5 @@
+本软件的设计和实现由李琛轩于任子行网络技术公司完成。
+软件环境：Python 2.7.5,Mac OSX
+哈尔滨工业大学，网络与信息安全研究中心
+个人EMAIL：leechan8@outlook.com
+项目主页及源码：https://github.com/LeechanX/lcxWebClassifier
