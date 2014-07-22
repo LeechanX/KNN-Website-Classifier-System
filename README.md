@@ -34,7 +34,7 @@
 ####简单输入（真实使用时，以CSV格式导入大量URL，为演示方便，这里是为了演示方便）
 ![github](https://raw.githubusercontent.com/LeechanX/lcx-KNN-website-classifier-system/master/Picture/input.png "github")  
 ####输出
-![github](https://raw.githubusercontent.com/LeechanX/lcx-KNN-website-classifier-system/master/Picture/outcoming.png "github")  
+![github](https://raw.githubusercontent.com/LeechanX/lcx-KNN-website-classifier-system/master/Picture/outcome.png "github")  
 5.详细设计
 -
 参见：
