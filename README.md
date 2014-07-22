@@ -8,9 +8,9 @@
 2.系统架构
 -
 ####（1）用户角度
-![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/user.tiff "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/user.tiff)  
 ####（2）系统角度
-![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/sys.tiff "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/sys.tiff)  
 3.各模块介绍
 -
 ####（1） 爬虫模块功能与技术
@@ -30,11 +30,11 @@
 4.效果演示（界面太挫。。）
 -
 ####系统界面
-![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/main.tiff "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/main.tiff)  
 ####简单输入（真实使用时，以CSV格式导入大量URL，为演示方便，这里是为了演示方便）
-![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/input.tiff "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/input.tiff)  
 ####输出
-![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/outcoming.tiff "github")  
+![github](https://github.com/LeechanX/lcx-KNN-website-classifier-system/blob/master/Picture/outcoming.tiff)  
 5.详细设计
 -
 参见：
