@@ -81,7 +81,6 @@ def main():
 	myutil.makedirectory('cache/subkNNs/')
 	while True:
 		test_entry=(yield)
-		print 'Yo,I am check %s Yo!' % test_entry.url###
 		vectorOfme=createVector(test_entry,all_features)
 		entroy_of_me={k:v for k,v in totalentroy.items() if k in vectorOfme}
 		if not isEmptyVector(vectorOfme):
