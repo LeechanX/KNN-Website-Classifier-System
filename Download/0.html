@@ -1,1365 +1,526 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6"><![endif]-->
-<!--[if IE 7 ]><html class="ie ie7"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8"><![endif]-->
-<!--[if IE 9 ]><html class="ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html><!--<![endif]-->
-<head>
-	<meta charset="UTF-8" />
-	<meta name="renderer" content="webkit" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="data-spm" content="a1z1s" />
-	<meta name="verify-v1" content="gNntuhTm2rH7Qa/GPp6lf0mIp9KQsjejNs+i1LZhG7U=" />
-	<meta name="keywords" content="虾米网,在线音乐网站,在线听歌,音乐网站,在线音乐试听,音乐搜索,音乐下载,APE,数字音乐,高品质音乐,mp3下载,高品质mp3,音乐P2P分享,音乐社区,音乐互动平台,音乐分享,乐评,高品质音乐社区,网络电台,老歌,无损音乐,P2P下载,音乐SNS,320K,320Kbps" />
-	<meta name="description" content="提供高品质音乐MP3的个性化推荐、发布、P2P下载服务，以及线下音乐活动等互动内容" />
-	<meta name="apple-itunes-app" content="app-id=595594905">
-	<title>虾米音乐网(xiami.com) - 中国好声音官方授权</title>
-
-    <link href="http://img.xiami.net/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <link href="http://img.xiami.net/res/img/common/ipad/xiami_logo_apple.png" rel="apple-touch-icon" />
-
-	<link href="http://res.xiami.net/??static/lib/jquery.jscrollpane.css,static/js/plug/poshytip-1.2/src/tip-twitter/tip-twitter.css,static/relation/css/name_card.css?ver=20140722-150346" media="all" rel="stylesheet" />
-
-	<script type="text/javascript" src="http://res.xiami.net/??static/lib/jQuery/1.9.1/jquery.min.js,static/lib/jquery.tools.tabs.min.js,static/lib/jqModal.js,res/js/jquery/jqDnR.js,static/lib/jquery.form.min.js,res/js/jquery/jquery.cookie.js,static/js/lib/jquery.tmpl.min.js?ver=20140722-150346"></script>
-
-	<script type="text/javascript" src="http://res.xiami.net/??static/lib/jquery.mousewheel.js,static/lib/jquery.jscrollpane.min.js,static/js/plug/poshytip-1.2/src/jquery.poshytip.js,static/js/app/relation.js,static/js/app/nameCard-1.9.js,static/music/common/MusicPlay.js?ver=20140722-150346"></script>
-
-
-	<link href="http://res.xiami.net/??static/common/reset.css,static/common/base.css,static/common/old.css,static/common/header.css,static/common/footer.css?ver=20140722-150346" media="all" rel="stylesheet" />
-
-	<script type="text/javascript" src="http://res.xiami.net/??static/common/base.js,static/common/header.js,static/common/footer.js?ver=20140722-150346"></script>
-
-
-	
-	<script>
-	var _xiamitoken = $.cookie('_xiamitoken'),
-		_xiamiimg = 'http://img.xiami.net',
-		_xiamiuser = $.cookie('user') || '',
-		_homesite = '',
-		_loginSite = 'https://login.xiami.com',
-		_athenaapiurl = 'ihi.xiami.com';
-	</script>
-
-	<link href="http://res.xiami.net/??static/common/song.css,static/common/album.css,static/common/artist.css,static/common/collect.css?ver=20140722-150346" media="all" rel="stylesheet" />
-<link href="http://res.xiami.net/??static/index/index.css,static/index/modules/slider.css,static/index/modules/recommend.css,static/index/modules/albums.css,static/index/modules/collects.css,static/index/modules/charts.css,static/index/modules/login.css,static/index/modules/user.css?ver=20140722-150346" media="all" rel="stylesheet" />
-<link href="http://res.xiami.net/??static/index/common/album.css,static/index/common/collect.css,static/index/common/song.css?ver=20140722-150346" media="all" rel="stylesheet" />
-<link href="http://res.xiami.net/??static/index/modules/timeline.css,static/index/modules/scene.css,static/index/modules/pyramid.css,static/index/modules/task.css,static/index/modules/friend.css,static/index/modules/group.css,static/index/modules/personalnav.css,static/index/modules/personalblock.css,static/index/modules/follow.css?ver=20140722-150346" media="all" rel="stylesheet" />
-<link href="http://res.xiami.net/??static/index/modules/recommend_room.css,static/index/modules/hot_room.css?ver=20140722-150346" media="all" rel="stylesheet" />
-
-	<script type="text/javascript" src="http://res.xiami.net/??static/common/song.js,static/common/album.js,static/common/artist.js,static/common/collect.js?ver=20140722-150346"></script>
-<script type="text/javascript" src="http://res.xiami.net/??static/index/index.js,static/index/modules/slider.js,static/index/modules/recommend.js,static/index/modules/albums.js,static/index/modules/collects.js,static/index/modules/charts.js,static/index/modules/login.js,static/lib/jquery.carouFredSel.js?ver=20140722-150346"></script>
-<script type="text/javascript" src="http://res.xiami.net/??static/index/modules/user.js,static/index/modules/timeline.js,static/lib/jquery.autoSuggest.js,static/index/modules/scene.js,static/index/modules/task.js,static/index/modules/friend.js,static/index/modules/group.js,static/index/modules/personalnav.js,static/index/modules/personalblock.js,static/index/modules/recommend_room.js?ver=20140722-150346"></script>
-
-
-	<!-- google ads -->
-			<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js?v=201307175516"></script>
-	<script type="text/javascript">GS_googleAddAdSenseService("ca-pub-2784367241150493");GS_googleEnableAllServices();</script>
-		<script type="text/javascript">
-	GA_googleAddSlot("ca-pub-2784367241150493", "Home-Apps-Promotion");	</script>
-	<script type="text/javascript">GA_googleFetchAds();</script>
-		<!-- end -->
-
-</head>
-
-<body data-spm="6843761"><script type="text/javascript">
-(function (d) {
-var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
-t.setAttribute("exparams","category=&userid=&aplus&member_auth=0");
-t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
-d.getElementsByTagName("head")[0].appendChild(t);
-})(document);
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="canonical" href="http://seller.dhgate.com/" />
+  <title>敦煌网中小商家的快速外贸平台-全球领先的跨境电商外贸B2B平台</title>
+  <meta name="keywords" content="敦煌网，跨境电商，外贸,外贸网站,外贸平台，外贸b2b，外贸网店，外贸资讯" />
+  <meta name="description" content="敦煌网外贸平台是全球领先的在线外贸交易平台，以在线交易为核心的B2B小额外贸批发平台，把中国产品通过跨境电商平台卖到世界各地，帮助想从事外贸生意的朋友们实现网上创业，网上开店！" />  
+  <meta name="360-site-verification" content="96bc6a4b353b1892b69baf8e8de489e2" /> 
+  <link href="http://css.dhresource.com/seller/home/head-foot.css?v=1414403513069" rel="stylesheet" type="text/css" />  
+  <link href="http://css.dhresource.com/seller/home/index.css?v=1410335902700" rel="stylesheet" type="text/css" /> 
+  <script type="text/javascript" src="http://js.dhresource.com/seller/common/jquery.js"></script> 
+ </head> 
+ <body> 
+  <div class="top-bar" data-editor="top-bar">
+   <a style="background-color:#167111;" href="http://seller.dhgate.com/promotion/157-christmas-products2.html?d=hdchristmas#hp-tban" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/11/07/8cbab970e1504c40ba1f86230d1da3f6.jpg" width="990" height="50" /></a>
+  </div> 
+  <div id="header-2014" class="j-header-container">
+    <div class="top-warp">
+        <div class="top-Info">
+            <div class="top-left">
+                <div class="j-nologin">
+                    欢迎您！<a href="http://seller.dhgate.com/usr/loginsign.do#hp-head-1" class="t-JoinFree j-gologin" rel="nofollow" target="_blank" >登录</a> 或 <a href="http://seller.dhgate.com/usr/sellerregister.do?act=pageload#hp-head-2" class="t-SignIn" rel="nofollow"  target="_blank">免费注册</a>
+                </div>
+                <div class="top-userInfo j-login" style="display:none">您好！<span class="j-user"></span> ( <a class="no-email j-noemail"></a> <a href="/messageweb/newmessagecenter.do?msgtype=001,002,003&dhpath=10005,0301,51001" class="yes-email j-email" style="display:none;">88</a> )</span> <a href="http://seller.dhgate.com/usr/signin.do?act=loginout">退出</a></div>
+            </div>
+            <div class="top-right">
+                <ul>
+                    <li><a href="http://seller.dhgate.com/mydhgate/index.do#hp-head-3" rel="nofollow"  target="_blank">我的DHgate</a></li>
+                    <li class="t-Divider"></li>
+                    <li><a href="http://seller.dhgate.com/syi/category.do#hp-head-4" rel="nofollow"  target="_blank">上传产品</a></li>
+                    <li class="t-Divider"></li>
+                    <li class="t-help j-dropdown"><a href="http://seller.dhgate.com/help/#hp-head-5"  target="_blank">帮助</a><i></i></li>
+                    <li class="t-Divider"></li>
+                    <li class="t-Mobile"><a href="http://seller.dhgate.com/seller/pro/377lp.html#hp-head-6"  target="_blank"><i></i>手机版</a></li>
+                    <li class="t-Divider"></li>
+                    <li class="t-message"><a href="http://seller.dhgate.com/news/announce/07/104801.html#hp-head-7" rel="nofollow"  target="_blank"><i></i>官方商户通微信</a></li>
+                    <li class="t-Divider"></li>
+                    <li><a href="http://www.dhgate.com/#hp-head-8" rel="nofollow"  target="_blank">Buyer Home</a></li>
+                </ul>
+            </div>
+            <div class="help-list j-dropdown-list" style="display:none;"><a href="http://seller.dhgate.com/help/#hp-head-9">帮助中心</a><a href="http://seller.dhgate.com/help/contactService.html#hp-head-10" rel="nofollow">联系客服</a></div>
+        </div>
+    </div>
+    <div class="head-Warp">
+        <div class="head-logo"><a href="http://seller.dhgate.com/#hp-logo-1"></a></div>
+        <div class="head-SearchBox j-head-search">
+            <div class="head-Search-inner">                   
+                <div class="head-Search-keywords">
+                    <input name="searchkey" autocomplete="off" type="text" value="请输入要搜索的关键词..." class="j-head-search-input">
+                </div>
+                <div class="head-cate-content j-head-search-type"> <span id="catalog" class="cate-text j-head-search-type-current">全部频道</span>
+                    <div id="catalogListBox" class="cate-list j-head-search-type-list" style="display:none" >
+                        <ul class="search-category-list">
+                            <li class="j-head-search-type-item">全部频道</li>
+                            <li class="j-head-search-type-item">政策规则</li>
+                            <li class="j-head-search-type-item">敦煌大学</li>
+                            <li class="j-head-search-type-item">帮助中心</li>
+                            <li class="j-head-search-type-item">公告</li>
+                            <li class="j-head-search-type-item">媒体报道</li>
+                            <li class="j-head-search-type-item">行业动态</li>
+                            <li class="j-head-search-type-item">成功故事</li>
+                        </ul>                        
+                    </div>
+                </div>
+                <input type="button" name="button"  class="head-search-text j-head-search-btn">
+            </div>
+        </div>
+    </div>
+    <div class="nav-Warp">
+        <div class="navigation">
+            <ul>
+                <li id="head_1"><a href="http://seller.dhgate.com/#hp-lc-1">首页</a></li>
+                <li id="head_2"><a href="http://seller.dhgate.com/story/#hp-lc-2">成功故事</a></li>
+                <li id="head_3" class="industry j-multi" data-editor="nav-industry"><a href="http://seller.dhgate.com/industry-trends/a_3c/index.html#hp-lc-9"><i></i>行业动态</a>
+                    <div class="nav-list j-multi-list"><a href="http://seller.dhgate.com/industry-trends/a_3c/index.html#hp-lc-9-1">3C数码</a><a href="http://seller.dhgate.com/industry-trends/a_wedding-dress/index.html#hp-lc-9-2">婚纱礼服</a><a href="http://seller.dhgate.com/industry-trends/a_zonghe/index.html#hp-lc-9-3">综合百货</a><a href="http://seller.dhgate.com/industry-trends/a_fashion/index.html#hp-lc-9-4">时尚百货</a><a href="http://seller.dhgate.com/industry-trends/a_baby-toys/index.html#hp-lc-9-5">母婴玩具</a><a href="http://seller.dhgate.com/industry-trends/a_health-beauty/index.html#hp-lc-9-6">健康美容&amp;假发</a></div>
+                </li>
+                <li id="head_4" class="j-multi"><a href="http://seller.dhgate.com/university/#hp-lc-3">敦煌大学</a>                   
+                </li>
+                <li id="head_5"><a href="http://seller.dhgate.com/policy/#hp-lc-4">政策规则</a></li>
+                <li id="head_6" class="industry sale j-multi"><a href="http://seller.dhgate.com/adcenter#hp-lc-5"><i></i>增值&营销</a>
+                    <div class="nav-list j-multi-list"><a href="http://seller.dhgate.com/adcenter/#hp-lc-5-1">产品市场</a><a href="http://adcenter.dhgate.com/index#hp-lc-5-2">推广营销</a><a href="http://seller.dhgate.com/promotion/116-detail.html#hp-lc-5-3">渠道合作</a></div>
+                </li>
+                <li id="head_7"><a href="http://seller.dhgate.com/microloan/#hp-lc-6">敦煌贷款</a></li>
+                <li id="head_8"><a href="http://seller.dhgate.com/wuliu.html#hp-lc-7">物流服务</a></li>
+                <li id="head_9"><a href="http://bbs.dhgate.com/#hp-lc-8" target="_blank">论坛</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://js.dhresource.com/seller/header/main.js?v=1411377147988"></script>
+</div> 
+  <div id="content" class="clearfix"> 
+   <div class="left"> 
+    <div class="switchBox j-carousel-container" data-editor="indexbanner"> 
+     <div class="switchingImg"> 
+      <ul class="j-list"> 
+       <li class="active j-item"><a href="http://seller.dhgate.com/promotion/158-apec.html?d=apec#hp-mban-1" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/fc/s006/wq/h/234.jpg" width="710" height="250" /></a> </li> 
+       <li class="j-item"><a href="http://seller.dhgate.com/promotion/153-yiwudahui.html?d=hdyiwuhui#hp-mban-2" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/fc/s006/wq/h/1.jpg" width="710" height="250" /></a></li> 
+       <li class="j-item"><a href="http://seller.dhgate.com/promotion/151-Square_Trade.html?d=hdzhibao#hp-mban-3" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/11/11/ce8680f77c2949708108efbaca11b530.jpg" width="710" height="250" /></a></li> 
+       <li class="j-item"><a href="http://seller.dhgate.com/promotion/ns-flowexpress.html?d=hdllkcchristmas#hp-mban-4" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/11/07/f56330b9c8bc4d9091da0ac079d3325c.jpg" width="710" height="250" /></a></li> 
+       <li class="j-item"><a href="http://seller.dhgate.com/promotion/137-wishlist.html?d=hdwishlist#hp-mban-5" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/11/11/5b665aaf0df644ccb4ed8f1eb958725f.jpg" width="710" height="250" /></a></li> 
+      </ul> 
+     </div> 
+     <div class="switchingBut"> 
+      <ul> 
+       <li class="current j-flag"></li> 
+       <li class="j-flag"></li> 
+       <li class="j-flag"></li> 
+       <li class="j-flag"></li> 
+       <li class="j-flag"></li> 
+      </ul> 
+     </div> 
+     <div class="switLeft-Scroll j-left" style="display:none;"></div> 
+     <div class="switRitht-Scroll j-right" style="display:none;"></div> 
+    </div> 
+    <div class="title-step">
+     <h2>交易流程4步骤 <span>&nbsp;- 轻松赚美金</span></h2>
+    </div> 
+    <div class="box step"> 
+     <ul> 
+      <li class="step1"><a href="http://seller.dhgate.com/university/c_13332.html#hp-step-1" target="_blank" hidefocus="">认证注册免费开店</a></li> 
+      <li class="step-point"></li> 
+      <li class="step2"><a href="http://seller.dhgate.com/university/c_13329.html#hp-step-2" target="_blank" hidefocus="">发布商品快速上传</a></li> 
+      <li class="step-point"></li> 
+      <li class="step3"><a href="http://seller.dhgate.com/university/c_13649.html#hp-step-3" target="_blank" hidefocus="">快速发货便捷物流</a></li> 
+      <li class="step-point"></li> 
+      <li class="step4"><a href="http://seller.dhgate.com/university/c_13331.html#hp-step-4" target="_blank" hidefocus=""><p>收款</p>完成交易</a></li> 
+     </ul> 
+    </div> 
+    <div class="title">
+     <h2>成功故事 <span>&nbsp;- 您可以比他们更成功</span></h2>
+     <div class="more">
+      <a href="http://seller.dhgate.com/story/#hp-story-1" target="_blank">更多</a> &raquo;
+     </div>
+    </div> 
+    <div class="box success-story clearfix j-tab-container" data-editor="story"> 
+     <div class="story-title"> 
+      <ul> 
+       <li class="j-tab-title current" data-target=".j-tab-story1">初出茅庐</li> 
+       <li class="j-tab-title" data-target=".j-tab-story2">崭露头角</li> 
+       <li class="j-tab-title" data-target=".j-tab-story3">电商大咖</li> 
+      </ul> 
+     </div> 
+     <div class="storyCont"> 
+      <div class="story-box clearfix j-tab-content j-tab-story1"> 
+       <div class="story-introduction clearfix"> 
+        <div class="stroy-img">
+         <img src="http://www.dhresource.com/cms/upload/infoimg/2014/09/09/15dbdd3ed0604209a068630adab728bb.jpg" width="100" height="100" />
+        </div> 
+        <dl> 
+         <dt>
+          <a href="http://seller.dhgate.com/story/c_11798.html#hp-story-1-1-1" target="_blank">创业梦想从敦煌网开始</a>
+         </dt> 
+         <dd> 
+          <p>几年前的外贸电商属新兴行业，尝试的人不多，我想要是往这方面去发展的话应该可以开辟出一片天地。经过多方对比，敦煌网的注册免费、操作简单、客流量大、专人指导等特点吸引了我......</p> 
+          <a href="http://seller.dhgate.com/story/c_11798.html#hp-story-1-1-1" class="more-all" target="_blank">查看全部</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <ul class="story-list"> 
+        <li><a href="http://seller.dhgate.com/story/c_11759.html#hp-story-1-1-2" target="_blank">草根创业者的品牌梦</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11618.html#hp-story-1-1-3" title="收获、感恩、信任 账号保持全年零纠纷" target="_blank">收获、感恩、信任 账号保持全年零纠纷</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11741.html#hp-story-1-1-4" title="产品发布之后不到俩小时，询盘来了！" target="_blank">产品发布之后不到俩小时，询盘来了！</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_14769.html#hp-story-1-1-5" target="_blank">积累稳定客户 单月销售破万</a></li> 
+       </ul> 
+      </div> 
+      <div class="story-box clearfix j-tab-content j-tab-story2" style="display:none;"> 
+       <div class="story-introduction clearfix"> 
+        <div class="stroy-img">
+         <img src="http://www.dhresource.com/cms/upload/infoimg/2014/10/23/6d0a003c25a049de82dd79d71c8f36c5.jpg" width="100" height="100" />
+        </div> 
+        <dl> 
+         <dt>
+          <a href="http://seller.dhgate.com/story/c_14767.html#hp-story-1-2-1" target="_blank">外贸菜鸟与敦煌一起成长</a>
+         </dt> 
+         <dd> 
+          <p>算起来，做外贸已经将近1年的时间了，在这一年里，作为一名菜鸟，敦煌助我成长，让我现在能游刃有余的处理每个订单，了解每个客户需要，找到我的目标客户，让我在这里开始了人生新的里程碑......</p> 
+          <a href="http://seller.dhgate.com/story/c_14767.html#hp-story-1-2-1" class="more-all" target="_blank">查看全部</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <ul class="story-list"> 
+        <li><a href="http://seller.dhgate.com/story/c_11738.html#hp-story-1-2-2" target="_blank"> 了解平台资源分布 打开销售空间</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11757.html#hp-story-1-2-3" title="店铺超高重复购买率源于不断挖掘新品款式" target="_blank">店铺超高重复购买率源于不断挖掘新品款式</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11775.html#hp-story-1-2-4" target="_blank"> 资源利用 获得更多销量</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11783.html#hp-story-1-2-5" target="_blank"> 适合新卖家的推广方式提高店铺流量</a></li> 
+       </ul> 
+      </div> 
+      <div class="story-box clearfix j-tab-content j-tab-story3" style="display:none;"> 
+       <div class="story-introduction clearfix"> 
+        <div class="stroy-img">
+         <img src="http://www.dhresource.com/cms/upload/infoimg/2014/09/09/dee03bc5be7c44c6ab6b5a37e7588c14.jpg" width="100" height="100" />
+        </div> 
+        <dl> 
+         <dt>
+          <a href="http://seller.dhgate.com/story/c_11790.html#hp-story-1-3-1" target="_blank">在敦煌网络丝绸之路上，有旭阳电商</a>
+         </dt> 
+         <dd> 
+          <p>2010年，耿旭阳根据对整个电子商务B2B，B2C、C2C国内外环境以及中国制造的产地产品集中地的分析，选择了商业大省浙江做为基地，开始打造自己的互联网/电子商务帝国，为自己呐喊，为互联网正名......</p> 
+          <a href="http://seller.dhgate.com/story/c_11790.html#hp-story-1-3-1" class="more-all" target="_blank">查看全部</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <ul class="story-list"> 
+        <li><a href="http://seller.dhgate.com/story/c_11791.html#hp-story-1-3-2" title="成交金额环比增长138.27% 源于对市场的把握" target="_blank">成交金额环比增长138.27% 源于对市场的把握</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11764.html#hp-story-1-3-3" target="_blank">不断开发新的产品线 才能稳定发展</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11753.html#hp-story-1-3-4" title="怀揣梦想创业一年，销售额达50万美金" target="_blank">怀揣梦想创业一年，销售额达50万美金</a></li> 
+        <li><a href="http://seller.dhgate.com/story/c_11739.html#hp-story-1-3-5" target="_blank">一年时间 新卖家如何跃进行业前十</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="title">
+     <h2>敦煌大学 <span>&nbsp;- 我们帮助您成功</span></h2>
+     <div class="more">
+      <a href="http://seller.dhgate.com/university/#hp-edu-1" target="_blank">更多</a> &raquo;
+     </div>
+    </div> 
+    <div class="box dh-university clearfix" data-editor="university"> 
+     <dl class="dl1"> 
+      <dt>
+       <a href="http://seller.dhgate.com/university/guide/list_1.html#hp-edu-1-1" target="_blank">卖家入门</a>
+      </dt> 
+      <dd> 
+       <div class="intro-title"> 
+        <p class="dh-introduction">新卖家入门必看内容，帮您快速实现从零到一的跨越。 </p>
+       </div> 
+       <ul class="university-list"> 
+        <li><a href="http://seller.dhgate.com/university/c_13726.html#hp-edu-1-1-1" target="_blank">资金账户常用设置</a><span>04/28</span></li> 
+        <li><a href="http://seller.dhgate.com/university/c_13699.html#hp-edu-1-1-2" target="_blank">如何上传产品</a><span>03/17</span></li> 
+       </ul> 
+      </dd> 
+     </dl> 
+     <dl class="dl2"> 
+      <dt>
+       <a href="http://seller.dhgate.com/industry-trends/list_1.html#hp-edu-1-2" target="_blank">行业趋势</a>
+      </dt> 
+      <dd> 
+       <div class="intro-title"> 
+        <p class="dh-introduction">最热销的海外产品速递，最新行业趋势快报，深入了解海外买家需求。 </p>
+       </div> 
+       <ul class="university-list"> 
+        <li><a href="http://seller.dhgate.com/industry-trends/c_14774.html#hp-edu-1-2-1" target="_blank">家居行业竞价广告投放技巧</a><span>10/27</span></li> 
+        <li><a href="http://seller.dhgate.com/industry-trends/c_14770.html#hp-edu-1-2-2" target="_blank">帽类产品销售情况分析</a><span>10/23</span></li> 
+       </ul> 
+      </dd> 
+     </dl> 
+     <dl class="dl3"> 
+      <dt>
+       <a href="http://seller.dhgate.com/university/marketing/list_1.html#hp-edu-1-3" target="_blank">店铺运营</a>
+      </dt> 
+      <dd> 
+       <div class="intro-title"> 
+        <p class="dh-introduction">快速提升流量，稳步获取订单，助力平台卖家快速成长。 </p>
+       </div> 
+       <ul class="university-list"> 
+        <li><a href="http://seller.dhgate.com/university/c_14786.html#hp-edu-1-3-1" title="免费站外流量--google shopping" target="_blank">免费站外流量--google shopping</a><span>10/30</span></li> 
+        <li><a href="http://seller.dhgate.com/university/c_13716.html#hp-edu-1-3-2" target="_blank">自主吸引流量的方法介绍</a><span>06/16</span></li> 
+       </ul> 
+      </dd> 
+     </dl> 
+     <dl class="dl4"> 
+      <dt>
+       <a href="http://seller.dhgate.com/university/guide/wuliu/list_1.html#hp-edu-1-4" target="_blank">物流宝典</a>
+      </dt> 
+      <dd>
+       <div class="intro-title"> 
+        <p class="dh-introduction">我们教您如何选择适合您的国际物流，简单设置运费，降低成本。 </p>
+       </div> 
+       <ul class="university-list"> 
+        <li><a href="http://seller.dhgate.com/university/c_13771.html#hp-edu-1-4-1" target="_blank">DHlink综合物流平台介绍</a><span>07/31</span></li> 
+        <li><a href="http://seller.dhgate.com/university/c_13701.html#hp-edu-1-4-2" target="_blank">如何选择国际物流</a><span>03/17</span></li> 
+       </ul> 
+      </dd> 
+     </dl> 
+    </div> 
+    <div class="dh-order"> 
+     <div class="title">
+      <h2>最新订单</h2>
+     </div> 
+     <div class="box"> 
+      <ul class="order-title">
+       <li class="title-country">来自国家</li>
+       <li class="title-total">订单总额</li>
+       <li class="title-state">状态</li>
+      </ul> 
+      <div class="order-list j-order-container"> 
+       <div class="order-list-inner j-list"> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="dh-bbs"> 
+     <div class="title">
+      <h2>论坛热帖</h2>
+      <div class="more">
+       <a href="http://bbs.dhgate.com/#hp-bbs-1" target="_blank">更多</a> &raquo;
+      </div>
+     </div> 
+     <div class="box" data-editor="blog"> 
+      <ul> 
+       <li><a href="http://bbs.dhgate.com/thread-471150-1-1.html#hp-bbs-1-1" target="_blank">妙招分享-巧用定价技巧带流量</a></li> 
+       <li><a href="http://bbs.dhgate.com/thread-474308-1-1.html#hp-bbs-1-2" target="_blank">敦煌网平台搜索量飙升词免费放送第一波</a></li> 
+       <li><a href="http://bbs.dhgate.com/thread-469658-1-1.html#hp-bbs-1-3" target="_blank">新卖家如何通过自主促销迎来第一单</a></li> 
+       <li><a href="http://bbs.dhgate.com/thread-469656-1-1.html#hp-bbs-1-4" target="_blank">吸引买家多下单的产品描述</a></li> 
+       <li><a href="http://bbs.dhgate.com/thread-469655-1-1.html#hp-bbs-1-5" target="_blank">提升店铺知名度的小妙招</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="right"> 
+    <div class="r-login margin10 j-login-container"> 
+     <div class="login-before j-nologin"> 
+      <h1>全球领先的<span>在线外贸</span>交易平台</h1> 
+      <ul> 
+       <li>每3秒产生1笔订单！</li> 
+       <li>每小时100000买家在线！</li> 
+       <li>免费发布10000个产品！</li> 
+      </ul> 
+      <div class="login-but clearfix">
+       <a href="http://seller.dhgate.com/usr/sellerregister.do?act=pageload#hp-trade-5" class="yellow-solid free-shop" rel="nofollow">免费开店</a>
+       <a href="http://seller.dhgate.com/usr/loginsign.do#hp-trade-6" class="yellow-hollow sign-in" rel="nofollow"><span>马上登录</span></a>
+      </div> 
+     </div> 
+     <div class="login-after j-login" style="display:none"> 
+      <p>您好 <strong class="j-user"></strong>:</p> 
+      <ul> 
+       <li>您有（<span class="login-mail j-noemail">0</span><span class="login-mail2 j-email" style="display:none;"><a href="http://seller.dhgate.com/messageweb/newmessagecenter.do?msgtype=001,002,003&amp;dhpath=10005,0301,51001" class="j-emailnum" rel="nofollow">0</a></span>）封 未读站内信</li> 
+       <li>最近30天因问题被下架的产品（<a href="http://seller.dhgate.com/prodmanage/downshelf/prodDownShelf.do?downShelfForm.withdrawaltype=3&amp;downShelfForm.forceWithdrawalDay=30" class="j-productnum" rel="nofollow">0</a>）</li> 
+       <li>买家尚未付款的订单（<a href="http://seller.dhgate.com/sellerordmng/orderList/list.do?params.linkType=101" class="j-ordernum" rel="nofollow">0</a>）</li> 
+      </ul> 
+      <div class="login-but clearfix">
+       <a href="http://seller.dhgate.com/mydhgate/index.do#hp-trade-7" class="yellow-hollow myDHgate" rel="nofollow"><span>进入我的DHgate</span></a>
+      </div> 
+     </div> 
+    </div> 
+    <div class="box media margin10 j-tab-container"> 
+     <div class="r-title"> 
+      <ul> 
+       <li class="j-tab-title current" data-target=".j-tab-media1"><h2><a href="http://seller.dhgate.com/news/announce/" target="_blank">敦煌公告</a></h2></li> 
+       <li class="j-tab-title " data-target=".j-tab-media2"><h2><a href="http://seller.dhgate.com/news/sf6.html#hp-news-1" target="_blank">敦煌网新闻</a></h2></li> 
+      </ul> 
+     </div> 
+     <div class="media-list j-tab-content j-tab-media1" style="display:block;" data-editor="gonggao"> 
+      <ul> 
+       <li><a href="http://seller.dhgate.com/news/announce/08/125001.html#hp-ann-1-1" target="_blank">新增视力保健类品牌Alcon</a><span>11/12</span></li> 
+       <li><a href="http://seller.dhgate.com/news/announce/08/124801.html#hp-ann-1-2" title="新增电子烟品牌kangertech" target="_blank">新增电子烟品牌kangertech</a><span>11/11</span></li> 
+       <li><a href="http://seller.dhgate.com/news/announce/07/124601.html#hp-ann-1-3" title="“关于APEC，你知道多少”有奖竞猜" target="_blank">“关于APEC，你知道多少”有奖竞猜</a><span>11/10</span></li> 
+       <li><a href="http://seller.dhgate.com/news/announce/07/124402.html#hp-ann-1-4" title="关于如实描述违规行为的处罚公告" target="_blank">关于如实描述违规行为的处罚公告</a><span>11/07</span></li> 
+       <li><a href="http://seller.dhgate.com/news/announce/07/124401.html#hp-ann-1-5" title="敦煌网卖家违规处罚公告第45周" target="_blank">敦煌网卖家违规处罚公告第45周</a><span>11/07</span></li> 
+      </ul> 
+      <div class="more">
+       <a href="http://seller.dhgate.com/news/announce/" target="_blank">查看更多</a> &raquo;
+      </div> 
+     </div> 
+     <div class="media-list j-tab-content j-tab-media2" data-editor="media" style="display:none;"> 
+      <ul> 
+       <li><a href="http://seller.dhgate.com/news/media/i123402.html#hp-news-1-1" title="APEC入京节奏，敦煌网王树彤会说什么" target="_blank">APEC入京节奏，敦煌网王树彤会说什么</a><span>10/31</span></li> 
+       <li><a href="http://seller.dhgate.com/news/media/i123401.html#hp-news-1-2" target="_blank">中国企业家闪耀APEC舞台</a><span>10/31</span></li> 
+       <li><a href="http://seller.dhgate.com/news/media/i120201.html#hp-news-1-3" title="敦煌网卖家海外仓“吸睛”全球客户" target="_blank">敦煌网卖家海外仓“吸睛”全球客户</a><span>10/14</span></li> 
+       <li><a href="http://seller.dhgate.com/news/media/i117001.html#hp-news-1-4" title="中国首个跨境电商研究生班启动招生" target="_blank">中国首个跨境电商研究生班启动招生</a><span>09/16</span></li> 
+       <li><a href="http://seller.dhgate.com/news/media/i116201.html#hp-news-1-5" title="敦煌网完成第4轮数亿元融资 将强化移动端" target="_blank">敦煌网完成第4轮数亿元融资 将强化移动端</a><span>09/12</span></li> 
+      </ul> 
+      <div class="more">
+       <a href="http://seller.dhgate.com/news/sf6.html#hp-news-1" target="_blank">查看更多</a> &raquo;
+      </div> 
+     </div> 
+    </div> 
+    <div class="r-ad margin10" data-editor="xiaobanner"> 
+     <a href="http://seller.dhgate.com/industry-trends/wishlist/list_1.html?d=industrywish#hp-rban-1" target="_blank" rel="nofollow"><img src="http://www.dhresource.com/fc/s006/wq/h/3.jpg" width="270" height="120" /></a> 
+    </div> 
+    <div class="box margin10 blog j-tab-container"> 
+     <div class="r-title"> 
+      <ul> 
+       <li class="current j-tab-title" data-target=".j-tab-blog1"><h2><a href="http://blog.sina.com.cn/wangshutongdhgate#hp-ceo-1" rel="nofollow" target="_blank">CEO博客</a></h2></li> 
+       <li class="j-tab-title" data-target=".j-tab-blog2"><h2><a href="http://elady.dhgate.com/#hp-elady-1" target="_blank">电商木兰</a></h2></li> 
+      </ul> 
+     </div> 
+     <div class="blog-list j-tab-content j-tab-blog1" data-editor="ceo"> 
+      <div class="blog-CEO clearfix"> 
+       <a href="http://blog.sina.com.cn/s/blog_634351030102uzoh.html#hp-ceo-1-1" class="CEO-img" rel="nofollow" target="_blank"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/09/09/a4dcd0d1d7f547caa68124625edf40e1.jpg" width="80" height="80" /></a> 
+       <dl> 
+        <dt>
+         <a href="http://blog.sina.com.cn/s/blog_634351030102uzoh.html#hp-ceo-1-1" title="外贸企业只会生产不会吆喝，这是最大的问题" target="_blank">外贸企业只会生产不会吆喝，这是最大的问题</a> 
+        </dt> 
+        <dd>
+         中国外贸企业缺乏核心的盈利模式，就算中国制造企业生产出再多的产品... 
+        </dd> 
+       </dl> 
+      </div> 
+      <ul> 
+       <li><a href="http://blog.sina.com.cn/s/blog_634351030102uy3z.html#hp-ceo-1-2" title="跨境电商人才需求旺 40多名大学生一抢而空" target="_blank">跨境电商人才需求旺 40多名大学生一抢而空</a><span>07/15</span></li> 
+       <li><a href="http://blog.sina.com.cn/s/blog_634351030102uxio.html#hp-ceo-1-3" title="跨境电商助力，中国小商品走自主品牌之路" target="_blank">跨境电商助力，中国小商品走自主品牌之路</a><span>07/08</span></li> 
+       <li><a href="http://blog.sina.com.cn/s/blog_634351030102uwsy.html#hp-ceo-1-4" title="中国90后如何勇闯非洲电商市场" target="_blank">中国90后如何勇闯非洲电商市场</a><span>07/01</span></li> 
+      </ul> 
+      <div class="more">
+       <a href="http://blog.sina.com.cn/wangshutongdhgate#hp-ceo-1" rel="nofollow" target="_blank">查看更多</a> &raquo;
+      </div> 
+     </div> 
+     <div class="blog-list j-tab-content j-tab-blog2" style="display:none;" data-editor="dianshang"> 
+      <div class="blog-CEO clearfix"> 
+       <a href="http://seller.dhgate.com/elady/1406/2509.html#hp-elady-1-1" class="CEO-img" target="_blank"><img src="http://www.dhresource.com/cms/upload/infoimg/2014/09/09/ec13ae5dddd140459a708baecb940ebb.jpg" width="80" height="80" /></a> 
+       <dl> 
+        <dt>
+         <a href="http://seller.dhgate.com/elady/1406/2509.html#hp-elady-1-1" title="黄劲：我们该占的全占满了" target="_blank">黄劲：我们该占的全占满了</a> 
+        </dt> 
+        <dd>
+         并购只是解决了那些原始创业者上市或退出的问题，但是没有解决在...
+        </dd> 
+       </dl> 
+      </div> 
+      <ul> 
+       <li><a href="http://seller.dhgate.com/elady/1406/2508.html#hp-elady-1-2" target="_blank">史燕来的“成功学”</a><span>04/01</span></li> 
+       <li><a href="http://seller.dhgate.com/elady/1406/2476.html#hp-elady-1-3" target="_blank">韩小红的生死时速</a><span>02/28</span></li> 
+       <li><a href="http://seller.dhgate.com/elady/1406/2475.html#hp-elady-1-4" title="曾玉：天使投资人不能倾轧创业者" target="_blank">曾玉：天使投资人不能倾轧创业者</a><span>02/28</span></li> 
+      </ul> 
+      <div class="more">
+       <a href="http://elady.dhgate.com/#hp-elady-1" target="_blank">查看更多</a> &raquo;
+      </div> 
+     </div> 
+    </div> 
+    <div class="box margin10 message"> 
+     <h2>加关注！扫一扫！</h2> 
+     <dl class="clearfix"> 
+      <dt>
+       <img src="http://css.dhresource.com/seller/home/image/wx.jpg" width="80" height="80" />
+      </dt> 
+      <dd>
+       最新行业资讯、经营技巧；
+      </dd> 
+      <dd>
+       订单查询，站内信回复；
+      </dd> 
+      <dd>
+       尽在敦煌网商户通微信！ 
+      </dd> 
+     </dl> 
+     <div class="micro-blog">
+      <a href="http://e.weibo.com/dhgate100#hp-sns-1" class="sina-blog" rel="nofollow" target="_blank">官方新浪微博</a>
+      <a href="http://1.t.qq.com/dhgatewang#hp-sns-2" class="qq-blog" rel="nofollow" target="_blank">官方腾讯微博</a>
+     </div> 
+    </div> 
+    <div class="service-time">
+     <a href="http://seller.dhgate.com/help/contactService.html#hp-sns-3" target="_blank"></a>有问题就点我！
+    </div> 
+   </div> 
+  </div> 
+  <div id="footer-2014">
+	<div class="user-help clearfix">
+    	<dl class="dl1">
+        	<dt>关于我们</dt>
+            <dd>
+            	<p><a href="http://seller.dhgate.com/news/sf1.html#hp-foot-1" rel="nofollow"  target="_blank">关于DHgate.com</a> | <a href="http://hr.dhgate.com/#hp-foot-2" rel="nofollow" target="_blank">招贤纳士</a></p>
+            	<p><a href="http://seller.dhgate.com/news/sf3.html#hp-foot-3" rel="nofollow"  target="_blank">隐私说明</a> | <a href="http://seller.dhgate.com/news/sf4.html#hp-foot-4" rel="nofollow"  target="_blank">服务条款</a> | <a href="http://seller.dhgate.com/sellersitemap.html#hp-foot-5">网站地图</a></p>
+                <p><a href="http://seller.dhgate.com/!khty#hp-foot-6"  target="_blank">体验计划</a> | <a href="http://seller.dhgate.com/news/sf7.html#hp-foot-7"  target="_blank">友情链接</a></p>
+            </dd>
+        </dl>
+        <dl class="dl2">
+        	<dt>新手指南 </dt>
+            <dd>
+            	<p><a href="http://seller.dhgate.com/merchant/register/pageLoad.do#hp-foot-8"  target="_blank">我要开店</a> | <a href="http://seller.dhgate.com/help/c0201.html#hp-foot-9"  target="_blank">上传产品</a> | <a href="http://seller.dhgate.com/help/c0203.html#hp-foot-10"  target="_blank">价格设置</a></p>
+                <p><a href="http://seller.dhgate.com/help/c0410.html#hp-foot-11"  target="_blank">运费设置</a> | <a href="http://seller.dhgate.com/university/c_14470.html#hp-foot-12"  target="_blank">交易流程</a> | <a href="http://seller.dhgate.com/promoweb/platformacty/actylist.do#hp-foot-13"  target="_blank">促销活动</a></p>
+<p><a href="http://seller.dhgate.com/industry-trends/report/list_1.html#hp-foot-25"  target="_blank">行业报告</a> | <a href="http://seller.dhgate.com/industry-trends/zixun/list_1.html#hp-foot-26"  target="_blank">行业资讯</a> | <a href="http://seller.dhgate.com/industry-trends/wishlist/list_1.html#hp-foot-27"  target="_blank">新品速递</a></p>
+            </dd>
+        </dl>
+        <dl class="dl3">
+        	<dt>敦煌服务</dt>
+            <dd>
+            	<p><a href="http://www.dhlink.com/Home/OnlineDelivery.aspx#hp-foot-14" rel="nofollow"  target="_blank">DHLink</a> | <a href="http://developer.dhgate.com/#hp-foot-15" rel="nofollow"  target="_blank">开放平台</a> | <a href="http://seller.dhgate.com/help/c0409.html#hp-foot-16" target="_blank">在线发货</a></p>
+            	<p><a href="http://seller.dhgate.com/university/c_12970.html#hp-foot-17" target="_blank">一键达搬家</a> | <a href="http://seller.dhgate.com/wuliu.html#hp-foot-18" target="_blank">物流服务</a> | <a href="http://seller.dhgate.com/microloan/#hp-foot-19">敦煌贷款</a></p>
+            </dd>
+        </dl>
+        <dl class="dl4">
+        	<dt>交易安全</dt>
+            <dd>
+            	<p><a href="http://seller.dhgate.com/help/c2001.html#hp-foot-20" target="_blank">资金账户</a> | <a href="http://seller.dhgate.com/help/c2003.html#hp-foot-21" target="_blank">银行账户设置</a> | <a href="http://seller.dhgate.com/help/c2002.html#hp-foot-22" target="_blank">请款</a></p>
+                <p><a href="http://seller.dhgate.com/help/c0908.html#hp-foot-23" target="_blank">风险控制</a> | <a href="http://seller.dhgate.com/help/c0903.html#hp-foot-24" target="_blank">纠纷处理</a></p>
+            </dd>
+        </dl>
+    </div>
+    <div class="user-site ">
+    	<p>Copyright Notice © 2004 - 2014 DHgate.com All rights reserved.</p>京ICP证050092号
+    </div>
+</div>
+<div class="topLayer j-toplayer" style="display:none;"><a href="javascript:;" class="top j-gototop" style="visibility:hidden;"><span><p>返回</p>顶部</span></a><a href="javascript:;" class="collection j-collection"><span><p>收藏</p>本站</span></a><a href="javascript:;" class="quest j-faq"><span><p>调查</p>问卷</span></a></div>
+ 
+  <script type="text/javascript" src="http://js.dhresource.com/seller/index/main.js?v=1415603933732"></script> 
+  <!-- D1 Start-->
+<script src="http://www.dhresource.com/dhs/fob/js/common/track/dhta.js" type="text/javascript"></script>
+<script type="text/javascript">(function(){
+         try{
+                 _dhq.push(["setVar","pt", "seller"]);
+                 _dhq.push(["event", "Public_S0003"]);
+         } catch(e){}
+         })();
 </script>
-<script>
-var ua = "";
-var UA_Opt = {};
-UA_Opt.LogVal = "ua";
-UA_Opt.MaxMCLog = 3;
-UA_Opt.MaxMPLog = 3;
-UA_Opt.MaxKSLog = 3;
-UA_Opt.Token = new Date().getTime() + ":" + Math.random();
-UA_Opt.SendMethod = 8;
-UA_Opt.Flag = 13454;
+<!-- D1 End--> 
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(
+         ['_setAccount', 'UA-425001-1'],
+         ['_setDomainName', '.dhgate.com'],
+         ['_trackPageview']
+);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
-<script src='http://uaction.aliyuncdn.com/js/ua.js'></script>
-<script>
-try{
-    UA_Opt.Token = new Date().getTime() + ":" + Math.random();
-UA_Opt.reload();
-}catch(err){}
-var uaexp=new Date();
-uaexp.setTime(uaexp.getTime()+30*24*60*60*1000);
-document.cookie="pnm_cku822="+encodeURIComponent(ua)+";path=/;expires="+uaexp.toGMTString();
-</script>
-
-
-
-<div id="header" data-spm="226669510">
-	<div class="primary">
-		<div class="gap">
-		<div class="wrapper">
-			<table>
-				<tr>
-															<td class="logo" style="width:65px;"><a href="/" title="虾米音乐网(xiami.com) - 高品质音乐 发现 分享" style="width:65px;background:url('http://img.xiami.net/static/img/common/logo/logo-0.gif') no-repeat -5px 0;">虾米音乐网(xiami.com) - 高品质音乐 发现 分享</a></td>
-					<td class="event" style="width:135px;"><a href="/market/music/act/xas2014.php" title="寻光集" style="overflow:hidden;display:block;width:135px;height:60px;background:url('http://res.xiami.net/static/img/common/logo/logo-0.gif') no-repeat -70px 0;line-height:60px;text-indent:100%;">寻光集</a></td>
-															<td class="nav">
-						<a class="bigtext current" href="/">发现音乐</a>
-						<a class="bigtext " href="/space/lib-song">我的音乐</a>
-					</td>
-					<td class="subnav">
-						<a class="bigtext first  " href="/collect">精选集</a>
-						<a class="bigtext middle  " href="/radio" target="_blank">电台</a>
-						<a class="bigtext middle  " href="http://i.xiami.com">音乐人</a>
-						<script>
-							document.write('<a class="bigtext last" href="http://music.taobao.com" target="_blank" style="zoom:1;position:relative;" onclick="goldlog.record(\'/xiamipc.1.15\',\'\',\'event=click&from=xiaminav&userid='+_xiamiuser.split('"')[0]+'\',\'H46807199\');">音乐馆<sup style="display:none;position:absolute;right:-13px;top:-6px;_top:1px;width:16px;height:18px;background:url(\'http://img.xiami.net/static/img/common/sale.png\') no-repeat"></sup></a>');
-						</script>
-					</td>
-					<td class="search">
-						<div class="container">
-							<form action="/search" method="get" id="search">
-								<input class="keyword" autocomplete="off" placeholder="音乐搜索，找人..." name="key" />
-								<input class="icon submit" type="submit" value="" title="搜索" />
-								<input type="hidden" name="pos" value="1" />
-							</form>
-							<div class="auto_complete"></div>
-						</div>
-					</td>
-										
-					<script>
-					if (_xiamiuser) {
-
-						//user_id+"+nick_name+"+avatar+"身份(0没有，1音乐人，2vip)+"+credits积分+"+等级level+"+关注+"+粉丝+"+听歌
-						var user = _xiamiuser.split('"');
-
-						document.write('<td class="account">\
-										<div class="container">\
-											<a class="first" href="" onclick="return false;"><b class="icon notify"></b></a>\
-											<a class="last" href="/u/'+user[0]+'"><b class="icon user">用户</b><b class="triangle"></b></a>\
-										</div>\
-									</td>\
-								</tr>\
-							</table>\
-							<div class="notify_popup">\
-								<div class="content">\
-									<div class="container"><p class="loading"></p></div>\
-									<b class="triangle"><i>◆</i>◆</b>\
-								</div>\
-							</div>\
-							<div class="user_popup">\
-								<div class="content">\
-									<ul>\
-										<li><a href="'+_homesite+'/u/'+user[0]+'"><b class="icon home"></b>我的主页</a></li>\
-										<li class="fence"></li>\
-										<li><a href="'+_homesite+'/relation/following"><b class="icon relationship"></b>关注 / 粉丝</a></li>\
-										<li><a href="'+_homesite+'/vip"><b class="icon vip"></b>VIP</a></li>\
-										<li><a href="'+_homesite+'/account"><b class="icon account"></b>账户</a></li>\
-										<li><a href="'+_homesite+'/property/myproperties"><b class="icon props"></b>道具</a></li>\
-										<li><a href="'+_homesite+'/share"><b class="icon setting"></b>设置</a></li>\
-										<li class="fence"></li>\
-										<li><a href="" class="logout" onclick="return false;"><b class="icon logout"></b>退出</a></li>\
-									</ul>\
-									<b class="triangle"><i>◆</i>◆</b>\
-								</div>\
-							</div>');
-					}
-					else {
-						document.write('<td class="reg">\
-										<a href="'+_homesite+'/member/register">免费注册</a>\
-									</td>\
-									<td class="login">\
-										<a class="first" href="https://login.xiami.com/member/login">立即登录</a>\
-										<a class="middle" href="" onclick="sinaLogin();return false;"><b class="icon weibo">weibo</b></a>\
-										<a class="last" href="" onclick="qqLogin();return false;"><b class="icon qq">qq</b></a>\
-									</td>\
-								</tr>\
-							</table>');
-					}
-					</script>
-					
-							</div>
-		</div>
-	</div>
-</div>
-<div id="hidden_obj">
-	<object data="/res/player/sdtos.swf?v=1406012658" type="application/x-shockwave-flash" width="1" height="1" id="trans" name="trans">
-	    <param name="movie" value="/res/player/sdtos.swf?v=1406012658" />
-	    <param name="quality" value="high" />
-	    <param name="wmode" value="window" />
-		<param name="allowScriptAccess" value="sameDomain" />
-	</object>
-</div><div id="secondary" data-spm="1110925385">
-	<div class="gap">
-	<div class="wrapper">
-		<div class="nav">
-			<a href="/" class="current bigtext">热门</a>
-			<a href="/chart" class="bigtext">排行榜</a>
-			<a href="/album" class="bigtext">专辑</a>
-			<a href="/artist" class="bigtext">艺人</a>
-			<a href="/genre" class="bigtext">风格</a>
-			<a href="/host" class="bigtext">直播间</a>
-			<a href="http://www.xiami.com/market/music/act/singmysongseason2.php" class="bigtext" target="_blank" style="zoom:1;position:relative;">中国好歌曲</a>
-						<a href="http://www.xiami.com/event/china-voice" class="current bigtext" target="_blank" style="zoom:1;position:relative;">中国好声音<sup style="display:block;position:absolute;right:-18px;top:-6px;_top:1px;width:16px;height:18px;background:url('http://img.xiami.net/static/img/common/common_icon.png?v=20131227173231') no-repeat -48px -16px;"></sup></a>
-					</div>
-		<div class="software"><b class="xiami"></b>下载客户端</div>
-		<div class="software_popup">
-			<div class="content">
-				<ul>
-					<li>
-						<a href="/apps/iphone">
-							<b class="icon iphone"></b>虾米音乐 for iPhone
-							<div class="qrcode"><img src="http://img.xiami.net/static/img/common/qrcode/qrcode_100.png?v=20140715133653" /><br />扫描二维码安装</div>
-						</a>
-					</li>
-					<li class="fence"></li>
-					<li>
-						<a href="/apps/android">
-							<b class="icon android"></b>虾米音乐 for Android
-							<div class="qrcode"><img src="http://img.xiami.net/static/img/common/qrcode/qrcode_100.png?v=20140715133653" /><br />扫描二维码安装</div>
-						</a>
-					</li>
-					<!-- <li class="fence"></li>
-					<li><a href="/apps/ipad"><b class="icon ipad"></b>虾米音乐 for iPad</a></li> -->
-					<li class="fence"></li>
-					<li><a href="/apps/win"><b class="icon windows"></b>虾米音乐 for Windows</a></li>
-					<li class="fence"></li>
-					<li><a href="/apps/mac"><b class="icon mac"></b>虾米音乐 for Mac</a></li>
-				</ul>
-				<b class="triangle"><i>◆</i>◆</b>
-			</div>			
-		</div>
-		<div class="history"><b class="listened"></b>最近播放</div>
-		<div class="history_popup">
-			<b class="triangle"><i>◆</i>◆</b>
-			<div class="content">
-				<h3>
-				
-				<script>
-				if (_xiamiuser) {
-					document.write('最近播放列表');
-				}
-				else {
-					document.write('当前播放列表<a href="https://login.xiami.com/member/login">登录后云同步你的播放列表</a>');
-				}
-				</script>
-				
-				</h3>
-				<div class="container"><p class="loading"></p></div>
-			</div>
-		</div>
-		<div class="vip"><a href="/vip"><b class="icon"></b>VIP会员</a></div>
-	</div>
-	</div>
-</div><div id="main">
-	<div class="gap">
-	<div class="wrapper">
-		<div class="section">
-			<div class="container">
-				<div id="slider" data-spm="1478643741">
-	<div class="content">
-				<div class="item">
-			<a href="http://www.xiami.com/market/music/act/xas2014.php?spm=a2z03.1200948.0.0.eReCoM#0" target="_blank" title="寻光集——中国第一张互联网唱片">
-				<img src="http://img.xiami.net/images/common/uploadpic/86/14060087864611.jpg">
-			</a>
-		</div>
-				<div class="item" style="display:none;">
-			<a href="http://www.xiami.com/group/thread-detail/tid/909008" target="_blank" title="好声音学员故事——陈永馨">
-				<img src="http://img.xiami.net/images/common/uploadpic/52/14059495525973.jpg">
-			</a>
-		</div>
-				<div class="item" style="display:none;">
-			<a href="http://www.xiami.com/market/music/act/chanyeguancha.php" target="_blank" title="数字音乐观察手记">
-				<img src="http://img.xiami.net/images/common/uploadpic/67/14059238677257.png">
-			</a>
-		</div>
-				<div class="item" style="display:none;">
-			<a href="http://www.xiami.com/album/1305677363" target="_blank" title="中国好声音第三季盲选第一期">
-				<img src="http://img.xiami.net/images/common/uploadpic/12/14057045121817.jpg">
-			</a>
-		</div>
-				<div class="item" style="display:none;">
-			<a href="http://www.tmall.com/go/market/promotion-act/skateboardshoes.php?from=xiami" target="_blank" title="我的滑板鞋时尚时尚最时尚">
-				<img src="http://img.xiami.net/images/common/uploadpic/32/14059955325696.jpg">
-			</a>
-		</div>
-			</div>
-	<div class="action">
-		<p>
-						<a href="#" class="current"></a>
-						<a href="#"></a>
-						<a href="#"></a>
-						<a href="#"></a>
-						<a href="#"></a>
-					</p>
-	</div>
-</div>				<div id="recommend" data-spm="1110925389">
-	<h2>
-		<strong class="bigtext">猜你喜欢</strong>
-		<span>&nbsp;/&nbsp;<a class="more" href="/radio/play/id/2">更多</a></span>		
-	</h2>
-	<div class="content">
-		<p class="loading"></p>
-	</div>
-</div>
-
-								<div id="hsy">
-	<a target="_blank" href="http://www.xiami.com/event/china-voice" title="《中国好声音》全球最快更新 只在虾米音乐" style="display:block;height:60px;margin:30px 0;background:url('http://img.xiami.net/static/img/hsy/banner.jpg') no-repeat center center;text-indent:-9999px;">《中国好声音》全球最快更新 只在虾米音乐</a>
-</div>				
-				<div id="albums">
-	<h2>
-		<strong class="bigtext">新碟首发</strong>
-		<span>&nbsp;/&nbsp;<a class="more" href="/music/newalbum">更多</a></span>
-		<div class="action">
-			<ul class="tab">
-				<li><a href="" data-tab="1_0" class="current" data-spm_c="1478643713">全部</a></li>
-				<li class="fence">|</li>
-				<li><a href="" data-tab="1_1" data-spm_c="1478643717">华语</a></li>
-				<li class="fence">|</li>
-				<li><a href="" data-tab="1_2" data-spm_c="1478643721">欧美</a></li>
-				<li class="fence">|</li>
-				<li><a href="" data-tab="1_3" data-spm_c="1478643725">日本</a></li>
-				<li class="fence">|</li>
-				<li><a href="" data-tab="1_4" data-spm_c="1478643729">韩国</a></li>
-											<li class="fence">|</li>
- 				<li><a href="" data-tab="2_120" data-spm_c="1561530701">清新的蓝草小调</a><sup></sup></li>
-											<li class="fence">|</li>
- 				<li><a href="" data-tab="2_121" data-spm_c="1561530725">那些英年早逝的巨星</a><sup></sup></li>
-											<li class="fence">|</li>
- 				<li><a href="" data-tab="2_122" data-spm_c="1561530729">他们靠这张成功转型</a><sup></sup></li>
-						</ul>
-		</div>
-	</h2>
-		<div class="view">
-		<div class="content_block" data-content="1_0" data-spm="1478643713">
-					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img97/1004997397/1049976771404999220_5.jpg" />
-		<a href="/album/104997677"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(104997677);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(104997677,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/104997677/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(104997677);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(104997677,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/104997677" title="寻光集（虾米音乐人合辑一号）">寻光集</a></strong></p>
-		<p><a href="/artist/1004997397" title="虾米音乐人" name_card="17330125" >虾米音乐人</a>
-						<a href="http://i.xiami.com/" target="_blank" title="虾米音乐人"><b class="icon musician"></b></a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img95/75195/6054782591405932384_5.jpg" />
-		<a href="/album/605478259"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(605478259);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(605478259,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/605478259/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(605478259);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(605478259,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/605478259" title="TOUCH &amp; MOVE">TOUCH &amp; MOVE</a></strong></p>
-		<p><a href="/artist/75195" title="Sistar（씨스타）" >Sistar</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img72/119672/13056773631405682964_5.jpg" />
-		<a href="/album/1305677363"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1305677363);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1305677363,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1305677363/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1305677363);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1305677363,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1305677363" title="第三季 盲选第一期（The Voice of China, Season 3: Blind Auditions 1）">第三季 盲选第一期</a></strong></p>
-		<p><a href="/artist/119672" title="中国好声音（The Voice of China）" >中国好声音</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img91/291/18053056231405575513_5.jpg" />
-		<a href="/album/1805305623"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1805305623);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1805305623,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1805305623/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1805305623);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1805305623,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1805305623" title="我最喜爱的Eric Kwok作品展（Eric Kwok Best Selections）">我最喜爱的Eric Kwok作品展</a></strong></p>
-		<p><a href="/artist/291" title="Eric Kwok（郭伟亮）" >Eric Kwok</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img45/23845/2058983711405921488_5.jpg" />
-		<a href="/album/205898371"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(205898371);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(205898371,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/205898371/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(205898371);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(205898371,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/205898371" title="あなたのことが大すき。（回忆中的玛妮 歌集专辑）">あなたのことが大すき。</a></strong></p>
-		<p><a href="/artist/23845" title="Priscilla Ahn（普莉西拉·安）" name_card="24458206" >Priscilla Ahn</a>
-						<a href="http://i.xiami.com/" target="_blank" title="虾米音乐人"><b class="icon musician"></b></a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img94/60294/3999415761405417766_5.jpg" />
-		<a href="/album/399941576"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(399941576);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(399941576,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/399941576/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(399941576);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(399941576,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/399941576" title="Trouble in Paradise">Trouble in Paradise</a></strong></p>
-		<p><a href="/artist/60294" title="La Roux" >La Roux</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img84/2284/19053575201405408999_5.jpg" />
-		<a href="/album/1905357520"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1905357520);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1905357520,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1905357520/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1905357520);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1905357520,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1905357520" title="不解释亲吻（Shut up & Kiss Me）">不解释亲吻</a></strong></p>
-		<p><a href="/artist/2284" title="萧亚轩（Elva）" >萧亚轩</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img58/7158/18048857321405908281_5.jpg" />
-		<a href="/album/1804885732"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1804885732);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1804885732,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1804885732/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1804885732);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1804885732,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1804885732" title="巷弄里的那家书店 电视原声带">巷弄里的那家书店 电视原声带</a></strong></p>
-		<p><a href="/artist/7158" title="原声带（Chinese OST）" >原声带</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img42/63142/17037501591405662173_5.jpg" />
-		<a href="/album/1703750159"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1703750159);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1703750159,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1703750159/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1703750159);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1703750159,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1703750159" title="Driving to the highway">Driving to the highway</a></strong></p>
-		<p><a href="/artist/63142" title="장근석（张根硕）" >장근석</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img78/778/16023027081405476412_5.jpg" />
-		<a href="/album/1602302708"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1602302708);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1602302708,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1602302708/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1602302708);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1602302708,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1602302708" title="平凡之路">平凡之路</a></strong></p>
-		<p><a href="/artist/778" title="朴树" >朴树</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img40/597628140/15054810171405654734_5.jpg" />
-		<a href="/album/1505481017"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1505481017);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1505481017,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1505481017/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1505481017);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1505481017,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1505481017" title="时间煮雨">时间煮雨</a></strong></p>
-		<p><a href="/artist/597628140" title="吴亦凡（Kris）" >吴亦凡</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img1/23401/18004852011400485201_5.jpg" />
-		<a href="/album/1800485201"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(1800485201);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(1800485201,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/1800485201/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(1800485201);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(1800485201,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/1800485201" title="Yes!">Yes!</a></strong></p>
-		<p><a href="/artist/23401" title="Jason Mraz（杰森·玛耶兹）" >Jason Mraz</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img62/262/20054034291405403429_5.jpg" />
-		<a href="/album/2005403429"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(2005403429);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(2005403429,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/2005403429/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(2005403429);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(2005403429,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/2005403429" title="致少年时代">致少年时代</a></strong></p>
-		<p><a href="/artist/262" title="古巨基（Leo Ku）" >古巨基</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img55/64155/641551402064155_5.jpg" />
-		<a href="/album/202064158"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(202064158);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(202064158,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/202064158/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(202064158);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(202064158,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/202064158" title="OLE!OH!">OLE!OH!</a></strong></p>
-		<p><a href="/artist/56619" title="木村カエラ（きむら かえら）" >木村カエラ</a>
-					</p>
-	</div>
-</div>					<div class="album">
-	<div class="image">
-		<img src="http://img.xiami.net/images/album/img33/1404980233/6053900931405390150_5.jpg" />
-		<a href="/album/605390093"><b class="mask"></b></a>
-		<b class="icon toplay" onclick="playalbum(605390093);"></b>
-		<dl>
-			<dt>
-				<b class="icon toheart"></b>
-				<b class="icon todropmenu"></b>
-			</dt>
-			<dd>
-				<ul>
-					<li onclick="tag(605390093,5);return false;"><a href=""><b class="icon tofavourite"></b>收藏</a></li>
-					<li onclick="showDialog('/music/sendall/id/605390093/type/album');return false;"><a href=""><b class="icon todownload"></b>发送到</a></li>
-					<li onclick="album2collect(605390093);return false;"><a href=""><b class="icon tocollect"></b>添加到</a></li>
-					<li onclick="recommend(605390093,33);return false;"><a href=""><b class="icon toshare"></b>分享到</a></li>
-				</ul>
-			</dd>
-		</dl>
-	</div>
-	<div class="info">
-		<p class="name"><strong><a href="/album/605390093" title="京城81号 电影原声（朝内81号）">京城81号 电影原声</a></strong></p>
-		<p><a href="/artist/1404980233" title="陈致逸（陈宇鹏）" name_card="38862186" >陈致逸</a>
-						<a href="http://i.xiami.com/" target="_blank" title="虾米音乐人"><b class="icon musician"></b></a>
-					</p>
-	</div>
-</div>				</div>
-	</div>
-		<a class="nav prev" href=""></a>
-	<a class="nav next" href=""></a>
-</div>				<div id="collects" data-spm="1478643745">
-	<h2>
-		<strong class="bigtext">虾米精选集</strong>
-		<span>&nbsp;/&nbsp;<a class="more" href="collect/recommend">更多</a></span>
-	</h2>
-	<div class="view">
-		<p class="loading"></p>
-	</div>
-	<a class="nav prev" href=""></a>
-	<a class="nav next" href=""></a>
-</div>
-				<div id="charts" data-spm="1478643733">
-	<h2>
-		<strong class="bigtext">大虾推荐</strong>
-		<span>&nbsp;/&nbsp;<a class="more" href="/chart/index/c/104">更多</a></span>
-	</h2>
-	<div class="content">
-		<p class="loading"></p>
-	</div>
-</div>
-			</div>
-		</div>
-		<div class="sidebar">
-			<div class="primary">
-
-			
-			<script>
-			if (_xiamiuser) {
-				var user_tmpl = '<div id="user" data-spm="1478643737">\
-									<div class="image">';
-				if (user[2]) {
-					user_tmpl += '<a name_card="'+user[0]+'" href="/u/'+user[0]+'"><img src="'+_xiamiimg+'/'+user[2]+'" /></a>';
-				}
-				else {
-					user_tmpl += '<a name_card="'+user[0]+'" href="/u/'+user[0]+'"><img src="'+_xiamiimg+'/res/img/default/usr50.gif" /></a>';
-				}
-				user_tmpl +='</div>\
-									<div class="content">\
-										<div class="name">\
-											<strong><a name_card="'+user[0]+'" href="/u/'+user[0]+'">'+user[1]+'</a></strong>';
-				if (user[3]==2) {
-					user_tmpl += '&nbsp;<a target="_blank" href="/vip"><b class="icon vip" title="虾米VIP"></b></a>';
-				}
-				if (user[3]==1) {
-					user_tmpl += '&nbsp;<a href="http://i.xiami.com/" target="_blank" title="虾米音乐人"><b class="icon musician"></b></a>';
-				}
-				user_tmpl +='</div>\
-							<div class="info level">\
-								等级 <a target="_blank" href="/websitehelp?#help9_3">'+user[5]+'</a>\
-							</div>\
-						</div>\
-					</div>\
-					<div id="user_extra" data-spm="1478643733">\
-						<ul>\
-							<li class="first"><a href="/relation/following"><em>'+user[6]+'</em>关注</a></li>\
-							<li><a href="/relation/fans"><em>'+user[7]+'</em>粉丝</a></li>\
-							<li><a href="/space/charts-recent"><em>'+user[8]+'</em>累计播放</a></li>\
-						</ul>\
-					</div>\
-					<div id="timeline" data-spm="226669506">\
-						<div class="content">\
-							<p class="loading"></p>\
-						</div>\
-					</div>';
-				document.write(user_tmpl);
-			}
-			else {
-				document.write('<div id="login_mobile" data-spm="226669494">\
-										<a href="/apps/android" class="qrcode" onclick="goldlog.record(\'/xiamiwuxian.1.1\',\'\',\'cache=20140401140724\',\'H46896547\');"></a>\
-										<a href="/apps/iphone" class="ios" onclick="goldlog.record(\'/xiamiwuxian.1.2\',\'\',\'cache=20140401140724\',\'H46896569\');"><b class="icon"></b>虾米音乐 for iPhone</a>\
-										<a href="/apps/android" class="android" onclick="goldlog.record(\'/xiamiwuxian.1.3\',\'\',\'cache=20140401140724\',\'H46896570\');"><b class="icon"></b>虾米音乐 for Android</a>\
-								</div>\
-								<div id="login_thirdparty" data-spm="226669502">\
-									<span class="bigtext">快速登录</span>\
-									<ul>\
-										<li><a href="" onclick="sinaLogin();return false;" class="weibo"><b class="icon"></b></a></li>\
-										<li><a href="" onclick="qqLogin();return false;" class="qq"><b class="icon"></b></a></li>\
-									</ul>\
-								</div>\
-								<div id="login_xiami" data-spm="226669498">\
-										<a class="login" href="https://login.xiami.com/member/login">登录</a>\
-										<span>立即<a class="reg" href="/member/register">免费注册</a></span>\
-								</div>');
-			}
-			</script>
-			
-
-			<div id="report">
-				
-				<style>
-				#report{height:52px;margin-top:20px;border:1px solid #EBEBEB;border-radius:4px;}
-				#report a{display:block;height:52px;border-radius:3px;background:url('http://img.xiami.net/images/common/uploadpic/61/14041087617369.png') no-repeat;}
-				#report a:hover{background-position:0 -52px;}
-				</style>
-				
-				<a title="暴恐音视频举报专区" target="_blank" rel="nofollow" href="http://net.china.com.cn/"></a>
-			</div>
-
-			<div id="scene" data-spm="226669474">
-	<h2>
-		<strong class="bigtext">星期二 下午</strong>
-	</h2>
-	<div class="content">
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/24/24/44511241302937448_2.jpg">
-				<b onclick="playcollect('4451124');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="提神" href="/search/collect?searchtag=1&key=提神">提神</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/518/18/5170518_1311330635_2.jpg">
-				<b onclick="playcollect('5170518');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="午后" href="/search/collect?searchtag=1&key=午后">午后</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/126/26/9881126_1329459502_2.jpg">
-				<b onclick="playcollect('9881126');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="工作" href="/search/collect?searchtag=1&key=工作">工作</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/425/25/21523425_1368725779_2.jpg">
-				<b onclick="playcollect('21523425');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="静心" href="/search/collect?searchtag=1&key=静心">静心</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/765/65/14090765_1352768345_2.jpg">
-				<b onclick="playcollect('14090765');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="下午茶" href="/search/collect?searchtag=1&key=下午茶">下午茶</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/216/16/13293216_1348452153_2.jpg">
-				<b onclick="playcollect('13293216');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="明快" href="/search/collect?searchtag=1&key=明快">明快</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/298/98/16695298_1362573579_2.jpg">
-				<b onclick="playcollect('16695298');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="困" href="/search/collect?searchtag=1&key=困">困</a></p>
-			</div>
-		</div>
-				<div class="item">
-			<div class="image">
-				<img src="http://img.xiami.net/images/collect/607/7/21595607_1390278779_exaS_2.jpg">
-				<b onclick="playcollect('21595607');" class="icon toplay" style="display: none;"></b>
-			</div>
-			<div class="info">
-				<p class="name"><a title="BGM" href="/search/collect?searchtag=1&key=BGM">BGM</a></p>
-			</div>
-		</div>
-			</div>
-</div>			</div>
-			<div class="secondary">
-
-			
-			<script>
-			if (_xiamiuser) {
-				document.write('<div id="pyramid" data-spm="6353689"><a href="/achievements">我的音乐成就：<span></span> 星</a></div>\
-								<div id="task" data-spm="226669490">\
-									<h2>\
-										<strong>任务</strong>\
-										<span>&nbsp;/&nbsp;<a class="more" href="">更多</a></span>\
-									</h2>\
-									<div class="content">\
-										<p class="loading"></p>\
-									</div>\
-								</div>');
-			}
-			</script>
-			
-
-			<div id="hot_room" data-spm="1997175657">
-	<h2>
-		<strong class="bigtext">推荐直播间<a class="random" href="javascript">随便听听</a></strong>
-	</h2>
-	<div class="content">
-		<div class="user_list">
-			<p class="loading"></p>
-		</div>
-	</div>
-</div>
-
-
-
-<script>
-$(function() {
-	var hotRoomListPageSize = 8;
-	if (_xiamiuser) {
-		// 登录后只显示3个
-		hotRoomListPageSize = 3;
+ 
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9eef9fc5580910cec1b91f7a0b6d273f' type='text/javascript'%3E%3C/script%3E"));
+window.onload = function() {
+	var theBdimages = document.images
+	for ( var i = 0, len = theBdimages.length; i < len; i++ ) {
+		if ( theBdimages[i].src == 'http://eiv.baidu.com/hmt/icon/21.gif' ) {
+			theBdimages[i].parentNode.style.display = 'none';
+			break;
+		}
 	}
-	var hotRoomList = new RecommendRoomList();
-	hotRoomList.init({
-		srcNode: $('#hot_room .user_list').eq(0),
-		pageSize: hotRoomListPageSize,
-		recordSuffix: '2'
-	});
-});
-</script>
-						<div id="group" data-spm="226669202">
-	<p class="loading"></p>
-</div>
-			</div>
-		</div>
-		<div id="personalnav" data-spm="1110925393">
-	<div class="content">
-		<span class="tag current" data-tab="0"><a href="" onclick="return false;">我的订阅</a></span>
-		<span class="setting" data-count="-1"><a href="/setting/subscribelist" title="订阅设置"><b class="icon tosetting"></b></a></span>
-	</div>
-</div>
-		<div id="personal" data-spm="1110930417">
-	<div class="content_block" data-content="0">
-		<p class="loading"></p>
-	</div>
-</div>
-	</div>
-	</div>
-</div>
-
-
-<style>
-#popup_xgj_mask{position:fixed;z-index:3998;left:0;top:0;width:100%;height:100%;background-color:#000;opacity:0.5;filter:alpha(opacity=50);}
-#popup_xgj_wrapper{position:absolute;z-index:3999;left:0;top:50%;width:100%;height:440px;margin-top:-220px;background:url('http://img.xiami.net/static/img/xgj/bg.jpg') repeat-y center;background-size:100%;}
-	#popup_xgj_slash{position:absolute;z-index:2;left:0;top:0;width:100%;height:440px;background:url('http://img.xiami.net/static/img/xgj/slash.jpg') no-repeat center;background-size:100%;opacity:0;filter:alpha(opacity=0);animation:slash 5s linear infinite;-webkit-animation:slash 5s linear infinite;}
-	@keyframes slash1 { 0{opacity:0;} 50%{opacity:1;} 100%{opacity:0;}  }
-	@-webkit-keyframes slash1 { 0{opacity:0;} 50%{opacity:1;} 100%{opacity:0;}  }
-	#popup_xgj_content{position:relative;z-index:3;width:980px;height:100%;margin:0 auto;}
-		#popup_xgj_logo{position:relative;width:309px;height:296px;margin:10px auto 0;background:url('http://img.xiami.net/static/img/xgj/sprite.png') no-repeat 0 0;}
-			#popup_xgj_logo a{position:relative;z-index:3;display:block;width:309px;height:296px;}
-			#popup_xgj_logo b{position:absolute;left:0;top:0;width:309px;height:296px;background:url('http://img.xiami.net/static/img/xgj/moon.png') no-repeat;background:none\9;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img.xiami.net/static/img/xgj/moon.png');}
-		#popup_xgj_button{width:108px;height:34px;margin:20px auto 0;background:url('http://img.xiami.net/static/img/xgj/sprite.png') no-repeat 0 -296px;cursor:pointer;}
-		#popup_xgj_button:hover{background-position:0 -330px;}
-		#popup_xgj_link{position:relative;width:550px;margin:20px auto;text-align:center;line-height:32px;}
-			#popup_xgj_link a{position:relative;z-index:3;margin:0 12px;font:14px 'Hiragino Sans GB','Microsoft Yahei',Helvetica,Arial,sans-serif;color:#FFF;text-decoration:none;}
-			#popup_xgj_link b{position:absolute;z-index:2;left:50px;top:0;width:32px;height:32px;background:url('http://img.xiami.net/static/img/xgj/sprite.png') no-repeat -146px -296px;}
-		#popup_xgj_video{position:absolute;left:50%;top:50%;width:800px;height:500px;margin-left:-400px;margin-top:-250px;/*opacity:0;*/}
-	#popup_xgj_close{position:absolute;z-index:4;right:10px;top:-50px;width:37px;height:37px;cursor:pointer;}
-		#popup_xgj_close a{display:block;width:37px;height:37px;}
-		#popup_xgj_close .close{background:url('http://img.xiami.net/static/img/xgj/sprite.png') no-repeat -108px -296px;}
-		#popup_xgj_close .back{background:url('http://img.xiami.net/static/img/xgj/sprite.png') no-repeat -178px -296px;}
-</style>
-
-<script>
-var xgj_closed = $.cookie('xgj_closed') || 0;
-if (!xgj_closed) {
-	function close_xgj() {
-		$('#popup_xgj_mask, #popup_xgj_wrapper').hide();
-		$('#popup_xgj_slash, #popup_xgj_step1').show();
-		$.cookie('xgj_closed', 1, {expires:2});
-		return false;
-	}
-	function play_xgj() {
-		$('#popup_xgj_wrapper').animate({'height':'100%', 'margin-top':'0', 'top':'0'});
-		$('#popup_xgj_close').animate({'top':'10'});
-		$('#popup_xgj_slash, #popup_xgj_step1').hide();
-		$('#popup_xgj_step2').delay(300).show(0);
-		$('#popup_xgj_close').html('<a href="###" title="back" class="back" onclick="return back_xgj();"></a>');
-	}
-	function back_xgj() {
-		$('#popup_xgj_step2').hide();
-		$('#popup_xgj_wrapper').animate({'height':'440', 'margin-top':'-220', 'top':'50%'});
-		$('#popup_xgj_close').animate({'top':'-50'});
-		$('#popup_xgj_slash, #popup_xgj_step1').delay(300).show(0);
-		$('#popup_xgj_close').html('<a href="###" title="close" class="close" onclick="return close_xgj();"></a>');
-		return false;
-	}
-	var xgj_tmpl = '<div id="popup_xgj_mask"></div>\
-					<div id="popup_xgj_wrapper">\
-						<div id="popup_xgj_slash"></div>\
-						<div id="popup_xgj_content">\
-							<div id="popup_xgj_step1">\
-								<div id="popup_xgj_logo"><b></b><a href="http://www.xiami.com/market/music/act/xas2014.php" target="_blank"></a></div>\
-								<div id="popup_xgj_button" onclick="play_xgj();"></div>\
-								<div id="popup_xgj_link">\
-									<a href="http://www.xiami.com/market/music/act/xas2014.php#1" target="_blank">为何寻光 &gt;&gt;</a>\
-									<a href="http://www.xiami.com/market/music/act/xas2014.php#2" target="_blank">作品欣赏 &gt;&gt;</a>\
-									<a href="http://www.xiami.com/market/music/act/xas2014.php#3" target="_blank">独家专访 &gt;&gt;</a>\
-									<a href="http://www.xiami.com/market/music/act/xas2014.php#4" target="_blank">主题沙龙 &gt;&gt;</a>\
-									<a href="http://www.xiami.com/market/music/act/xas2014.php#5" target="_blank">寻光计划 &gt;&gt;</a>\
-									<b></b>\
-								</div>\
-							</div>\
-							<div id="popup_xgj_step2" style="display:none;">\
-								<div id="popup_xgj_video">\
-									<object type="application/x-shockwave-flash" data="http://cloud.video.taobao.com//play/u/2146861239/p/1/e/1/t/1/13146414.swf" width="800" height="500">\
-										<param name="movie" value="http://cloud.video.taobao.com//play/u/2146861239/p/1/e/1/t/1/13146414.swf" />\
-										<param name="quality" value="high" />\
-									</object>\
-								</div>\
-							</div>\
-						</div>\
-						<div id="popup_xgj_close"><a href="###" title="close" class="close" onclick="return close_xgj();"></a></div>\
-					</div>';
-
-	document.write(xgj_tmpl);
-
-	var star = $('#popup_xgj_link b'),
-		temp;
-	$('#popup_xgj_link a').each(function(index) {
-		$(this).mouseover(function() {
-			temp = setTimeout(function() {
-				star.animate({'left':50+104*index});
-			}, 200);
-		}).mouseout(function() {
-			clearTimeout(temp);
-		});
-	});
-
-	var lightMove = function() {
-		$('#popup_xgj_slash').animate({'opacity':'1'}, 2500, 'linear').animate({'opacity':'0'}, 2500, 'linear', lightMove);
-	};
-	lightMove();
-
-	var logoMove = function() {
-		$('#popup_xgj_logo b').animate({'opacity':'0'}, 2000, 'linear').animate({'opacity':'1'}, 2000, 'linear', logoMove);
-	};
-	logoMove();
 }
-</script>
-
-<script type="text/javascript" src="http://a.tbcdn.cn/s/fdc/xwj.js"></script>
-
-<script type="text/javascript">
-window._ap_xwj && _ap_xwj.monitor("201406092692977654", {"sample_rate":1,"dead_line":1404057600000});
-</script>
-
-<div id="footer" data-spm="1110930425">
-	<div class="gap">
-	<div class="wrapper">
-		<div class="content">
-			<div class="sitemap">
-				
-				<dl>
-					<dt>关于</dt>
-					<dd><a title="关于我们" href="/about">关于我们</a></dd>
-					<dd><a title="虾米招聘" href="/job">虾米招聘</a><sup class="hot"></sup></dd>
-										<dd><a title="独立音乐人合作" href="/musician-contact">独立音乐人合作</a></dd>
-					<dd><a title="联系我们" href="/contact">联系我们</a></dd>
-					<dd><a title="友情链接" href="/links">友情链接</a></dd>
-				</dl>
-				
-				<dl>
-					<dt>特色服务</dt>
-					<dd><a title="虾米 VIP" href="/vip">虾米 VIP</a></dd>
-					<dd><a title="音乐达人" href="/relation/talentcollect">音乐达人</a></dd>
-					<dd><a title="虾米小组" href="/group">虾米小组</a></dd>
-					<dd><a title="虾米 LOOP" href="http://loop.xiami.com/">虾米 LOOP</a></dd>
-					<dd><a title="虾米播播" href="/widget">虾米播播</a></dd>
-					<dd><a title="音乐专题" href="/events">音乐专题</a></dd>
-									</dl>
-				
-				<dl>
-					<dt>虾米云音乐</dt>
-					<dd><a title="虾米 for iPhone" href="/apps/iphone">虾米 for iPhone</a><sup class="hot"></sup></dd>
-					<dd><a title="虾米 for Android" href="/apps/android">虾米 for Android</a></dd>
-					<dd><a title="虾米 for Windows" href="/apps/win">虾米 for Windows</a></dd>
-					<dd><a title="虾米 for Mac" href="/apps/mac">虾米 for Mac</a></dd>
-					<dd><a title="虾米 for iPad" href="/apps/ipad">虾米 for iPad</a></dd>
-				</dl>
-
-				
-				<dl>
-					<dt>更多</dt>
-					<dd><a title="分类找歌" href="/music/category">分类找歌</a></dd>
-					<dd><a title="帮助中心" href="/websitehelp">帮助中心</a></dd>
-					<dd><a title="添加虾米还没有的资料" href="/wiki/addalbum">添加虾米还没有的资料</a></dd>
-					<dd><a title="提交大家想要的专辑" href="/music/want">提交大家想要的专辑</a></dd>
-					<dd><a title="给虾米提意见" href="/group/join/id/10147?done=/group/thread-new/id/10147">给虾米提意见</a></dd>
-					<dd><a title="虾传" href="/software/allegro">虾传</a></dd>
-				</dl>
-			</div>
-				
-						<div class="cooperation">
-				<p class="vam gray labels"><span>合作伙伴：</span>
-<a href="/partners">
-<img title="索尼音乐" width="40" height="40" alt="索尼音乐" src="http://img.xiami.net/res/img/common/links/sn_music.jpg" />
-<img title="华纳唱片" width="40" height="40" alt="华纳唱片" src="http://img.xiami.net/res/img/common/links/hn_music.jpg" />
-<img title="环球唱片" width="40" height="40" alt="环球唱片" src="http://img.xiami.net/res/img/common/links/hq_music.jpg" />
-<img title="环球词曲" width="40" height="40" alt="环球词曲" src="http://img.xiami.net/res/img/common/links/hq.jpg" />
-<img title="华纳版权中国" width="40" height="40" alt="华纳版权中国" src="http://img.xiami.net/res/img/common/links/warner.jpg" />
-<img title="滚石" width="40" height="40" alt="滚石" src="http://img.xiami.net/res/img/common/links/rr.jpg" />
-<img title="百代" width="40" height="40" alt="百代" src="http://img.xiami.net/res/img/common/links/emi.jpg" />
-<img title="英皇" width="40" height="40" alt="英皇" src="http://img.xiami.net/res/img/common/links/eeg.jpg" />
-<img title="金牌大风" width="40" height="40" alt="金牌大风" src="http://img.xiami.net/res/img/common/links/gt.jpg" />
-<img title="索尼ATV" width="40" height="40" alt="索尼ATV" src="http://img.xiami.net/res/img/common/links/atv.jpg" />
-<img title="愛貝克思" width="40" height="40" alt="愛貝克思" src="http://img.xiami.net/res/img/common/links/avex.jpg" />
-<img title="华研国际" width="40" height="40" alt="华研国际" src="http://img.xiami.net/res/img/common/links/him.png" />
-<img title="海蝶音乐" width="40" height="40" alt="海蝶音乐" src="http://img.xiami.net/res/img/common/links/obi.gif" />
-<img title="丰华唱片" width="40" height="40" alt="丰华唱片" src="http://img.xiami.net/res/img/common/links/fh.jpg" />
-<img title="亚神音乐" width="40" height="40" alt="亚神音乐" src="http://img.xiami.net/res/img/common/links/ys.jpg" />
-<img title="福茂唱片" width="40" height="40" alt="福茂唱片" src="http://img.xiami.net/res/img/common/links/fm.jpg" />
-<img title="风潮音乐" width="40" height="40" alt="风潮音乐" src="http://img.xiami.net/res/img/common/links/fc.jpg" />
-<img title="相信音乐" width="40" height="40" alt="相信音乐" src="http://img.xiami.net/res/img/common/links/bin.jpg" />
-<img title="种子音乐" width="40" height="40" alt="种子音乐" src="http://img.xiami.net/res/img/common/links/seed.jpg" />
-<img title="美梦成真唱片" width="40" height="40" alt="美梦成真唱片" src="http://img.xiami.net/res/img/common/links/dct.jpg" />
-<img title="中国音乐著作权协会" width="40" height="40" alt="中国音乐著作权协会" src="http://img.xiami.net/res/img/common/links/mcsoc.jpg" />
-<img title="银基一帮行" width="40" height="40" alt="银基一帮行" src="http://img.xiami.net/res/img/common/links/m312.jpg" />
-<img title="可登唱片" width="40" height="40" alt="可登唱片" src="http://img.xiami.net/res/img/common/links/kd.jpg" />
-<img title="摩登天空" width="40" height="40" alt="摩登天空" src="http://img.xiami.net/res/img/common/links/mdtk.gif" />
-<img title="十三月" width="40" height="40" alt="十三月" src="http://img.xiami.net/res/img/common/links/13y.gif" />
-<img title="兵马司" width="40" height="40" alt="兵马司" src="http://img.xiami.net/res/img/common/links/bms.gif" />
-<img title="竹书酷乐" width="40" height="40" alt="竹书酷乐" src="http://img.xiami.net/res/img/common/links/zhushu.jpg" />
-<img title="飞行者" width="40" height="40" alt="飞行者" src="http://img.xiami.net/res/img/common/links/feixingzhe.jpg" />
-</a>
-</p>			</div>
-			
-		</div>
-		<div class="ali_group">
-			<a href="http://page.1688.com/shtml/about/ali_group1.shtml">阿里巴巴集团</a>
-			<b>|</b>
-			<a href="http://www.alibaba.com">阿里巴巴国际站</a>
-			<b>|</b>
-			<a href="http://www.1688.com">阿里巴巴中国站</a>
-			<b>|</b>
-			<a href="http://www.aliexpress.com">全球速卖通</a>
-			<b>|</b>
-			<a href="http://www.taobao.com">淘宝网</a>
-			<b>|</b>
-			<a href="http://www.tmall.com">天猫</a>
-			<b>|</b>
-			<a href="http://ju.taobao.com">聚划算</a>
-			<b>|</b>
-			<a href="http://www.etao.com">一淘</a>
-			<b>|</b>
-			<a href="http://www.alimama.com">阿里妈妈</a>
-			<b>|</b>
-			<a href="http://trip.taobao.com">淘宝旅行</a>
-			<b>|</b>
-			<a href="http://www.xiami.com">虾米</a>
-			<b>|</b>
-			<a href="http://www.aliyun.com">阿里云计算</a>
-			<b>|</b>
-			<a href="http://www.yunos.com">云OS</a>
-			<b>|</b>
-			<a href="http://www.net.cn">万网</a>
-			<b>|</b>
-			<a href="http://www.alipay.com">支付宝</a>
-			<b>|</b>
-			<a href="http://www.laiwang.com/">来往</a>
-		</div>
-		<div class="extra">
-			<div class="sns">
-				关注虾米： 
-				<a href="http://t.sina.com.cn/xiamixiamixiami" title="新浪微博"><b class="icon sina"></b></a>
-				<a href="http://page.renren.com/699099957/index" title="人人网"><b class="icon renren"></b></a>
-				<a href="http://new.qzone.qq.com/810167634" title="QQ 空间"><b class="icon qzone"></b></a>
-				<a href="http://t.qq.com/xiaxiaomi" title="腾讯微博"><b class="icon tqq"></b></a>
-								<a href="http://www.douban.com/people/xiaxiaomi" title="豆瓣"><b class="icon douban"></b></a>
-							</div>
-			
-			<div class="copyright">&copy; 2007 - <script>document.write(new Date().getFullYear());</script> <a href="http://www.xiami.com/">杭州缪斯客网络科技有限公司</a> - <a href="/sitemap" title="网站地图">网站地图</a> <strong class="xiami_motto ti" title="give music a chance">"give music a chance"</strong><br /><a href="http://img.xiami.net/res/v3/img/wenwangwen.jpg" target="_blank">浙网文[2011]0012-005号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank" title="浙ICP备08103200号-2">浙ICP备08103200号-2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://img.xiami.net/res/v3/img/icp.jpg" target="_blank">经营许可证编号 浙B2-20110188</a>&nbsp;&nbsp;&nbsp;&nbsp;阿里巴巴旗下网站</div>
-		
-		</div>
-	</div>
-	</div>
-</div>
-
-<div id="personal_hover" style="display:none;"></div>
-<textarea id="personal_hover_tpl" style="display:none;">
-	<div id="personal_hover_shadow" class="lightShadow"></div>
-	<div id="personal_hover_inner">
-	<a id="personal_hover_link" href="http://www.xiami.com/u/%uid%" title=" %gmt_access% "><img id="personal_hover_img" src="%avatar%" width="50" height="50" /></a>
-	<img class="hidden" id="personal_hover_pulser_img" src="http://img.xiami.net/res/img/default/loading50x50.gif" width="50" height="50" alt="" />
-	<div id="personal_trigger_bar">
-	<a class="personal_drop" id="personal_menu_down" href="javascript:;" title="">更多内容</a>
-	<div id="personal_menu_show" class="personal_buddy_menus" style="display:none;">
-	<span class="blank_block"></span>
-	<p id="personal_relationship_g"><span class="be_contacts"><strong>%nick_name%</strong></span></p>
-	<div id="personal_menu_other_div">
-		<a id="personal_o_index" class="blocks" href="http://www.xiami.com/u/%uid%" title="%nick_name%的个人主页">%nick_name%的个人主页</a>
-<!--		<a id="personal_o_minifeed"  class="blocks" href="http://www.xiami.com/space/feed/u/%uid%" title="近况">近况</a>-->
-		<a id="personal_o_library"  class="blocks" href="http://www.xiami.com/space/lib-song/u/%uid%" title="%nick_name%的音乐库">音乐库</a>
-        <a id="personal_o_recommend"  class="blocks" href="http://www.xiami.com/space/rec/u/%uid%" title="%nick_name%的分享">分享</a>
-        <a id="personal_o_contact"  class="blocks" href="http://www.xiami.com/space/following/u/%uid%" title="%nick_name%的关注和粉丝">关注/粉丝</a>
-		<a id="personal_o_collect"  class="blocks" href="http://www.xiami.com/space/collect/u/%uid%" title="%nick_name%的精选集">精选集</a>
-<!--		<a id="personal_o_charts"  class="blocks" href="http://www.xiami.com/space/charts/u/%uid%" title="个人排行榜">个人排行榜</a>-->
-		<a id="personal_o_topic"  class="blocks" href="http://www.xiami.com/space/group-thread/u/%uid%" title="%nick_name%参与过的话题">参与的话题</a>
-	</div>
-	<a id="personal_msgsned" class="blocks_out" href="http://www.xiami.com/member/sendpm?to_user_id=%uid%" title="发站内信">发站内信</a>
-	<a id="personal_block_usr" class="blocks_out" href="javascript:;" onclick="blacklist('%uid%');return false;" title="加入黑名单">加入黑名单</a>
-	<div id="person_menu_self_div"></div>
-	</div>
-	</div>
-	</div>
-</textarea>
-
-
-
-<script>
-;(function($){
-	$.fn.personalDropMenu = function(settings){
-		var defaults = {
-			menuDiv: '#personal_hover',
-			tplDiv: '#personal_hover_tpl',
-			dropdownArrow:'#personal_menu_down',
-			myUid: 0
-		};
-        
-		$.extend(defaults, settings);
-        
-		var $menuDiv,menuDiv_html,$tplDiv;
-		$menuDiv = $(defaults.menuDiv);
-		$tplDiv = $(defaults.tplDiv);
-		menuDiv_html = $tplDiv.val();//保存原始的html        
-		$menuDiv.bind('mouseleave',function(){$(this).hide();});
-		window.isFriendshipQueryed=false;
-		var friends;
-		var setFriendHtml = function(uid,$obj){
-			$obj.next().remove();
-			if(uid == defaults.myUid) {
-				$obj.html('<strong>你自己</strong>');
-				$menuDiv.find('#personal_block_usr').remove();
-				$menuDiv.find('#personal_msgsned').remove();
-			}else if(!friends){
-				$obj.after('<span class="be_stranger"><a href="javascript:;" onclick="attention('+uid+',1);">(加关注)</a></span>');
-			}else if(friends['f_'+uid] && friends['f_'+uid]=="1"){
-				$obj.after('<span class="be_stranger"> 已关注 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消关注)</a></span>');
-			}else if(friends['f_'+uid] && friends['f_'+uid]=="2"){
-				$obj.after('<span class="be_stranger"> 已关注 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消关注)</a></span>');
-			}else if(friends['f_'+uid] && friends['f_'+uid]=="3"){
-				$obj.after('<span class="be_stranger"> 已加入黑名单 <a href="http://www.xiami.com/member/attention/uid/'+uid+'/type/2?_xiamitoken='+_xiamitoken+'" onclick="return confirm(\'确定要取消吗？\');">(取消)</a></span>');
-				$menuDiv.find('#personal_block_usr').remove();
-				$menuDiv.find('#personal_msgsned').remove();
-			}else{
-				$obj.after('<span class="be_stranger"><a href="javascript:;" onclick="attention('+uid+',1);">(加关注)</a></span>');
-			}
-		};
-        
-		return this.each(function(){
-			var $this;
-			$this = $(this);
-			$this.mouseover(function(){
-				var params ={
-					uid: /\d+/.exec($this.attr('href')),
-					avatar: $this.find('img').attr('src'),
-					nick_name:$this.attr('title'),
-					gmt_access:$this.attr('rel')
-				};
-				if(params.gmt_access!='') params.gmt_access = "来访时间: "+params.gmt_access;
-				var html = menuDiv_html.parseTpl(params);
-				//var rects = $this[0].getBoundingClientRect();
-				var rects = $this.offset();
-				var bodyRects = $('body')[0].getBoundingClientRect();
-				//var left = rects.left - bodyRects.left - 6;
-				//var top = rects.top - bodyRects.top - 6;
-				var left = rects.left - 6;
-				var top = rects.top - 6;
-				$menuDiv.css({'top':top,'left':left});
-				$menuDiv.html(html).show();
-				if(params.gmt_access=='') $menuDiv.find('#personal_hover_link').attr('title','');
-				$menuDiv.find(defaults.dropdownArrow).click(function(){
-					var $this = $(this);
-					var $next = $this.next();
-					$this.toggleClass('active')
-					$next.toggle();
-					if($next.css('display')!='block') return;
-					$relation = $next.find('.be_contacts');
-					if(params.uid ==defaults.myUid) {setFriendHtml(params.uid,$relation); return; }     
-					if(isFriendshipQueryed){ setFriendHtml(params.uid,$relation); return; }                    
-					if(!myUid) return;
-					$relation.after($loading2);
-					$.getJSON('/member/get-friends/_xiamitoken/'+_xiamitoken,function(data){
-						try{
-							$relation.next().remove();
-							if(data.status == 'failed'){return false;}
-							isFriendshipQueryed = true;
-							friends = data.friends;
-							setFriendHtml(params.uid,$relation);
-						}catch(e){alert('Warning:something wrong! Please retry!');return;}
-					});
-				});
-			});
-		});
-	};
-})(jQuery);
-
-
-// var myUid = parseInt('');
-// $('.personalDropDown').personalDropMenu({myUid:myUid});
-</script>
-
-
-<script>
-$(document).ready(function(){
-	$('body').click(function(e){
-		$(".ctrl_gears_more").addClass('hidden');
-		$(".bt_cdgears").removeClass('active');	
-	});
-	
-	$("#web_loading").remove();
-
-	$(".song_menu").mouseover(function() {
-		$(this).css('z-index','6').children('span').show();
-	}).mouseout(function() {
-		$(this).css('z-index','5').children('span').hide();
-	});
-
-	$(".bt_cdgears").mouseover(function(){$(this).addClass('active').next().removeClass('hidden').show();});
-
-});
-var checkFlash=function(a){var b='检测到您系统Flash插件版本过低,为了更好的使用虾米音乐,请升级您的Flash插件, <a href="http://get.adobe.com/cn/flashplayer/" target="_blank" style="color:#36c">马上升级</a>',c=function(){var a,c,b=document.body.children||document.body.childNodes;for(c=0;c<b.length;c++)if(1==b[c].nodeType){a=b[c];break}return a}(),d=function(){var c,a=navigator,b=0;if(a.plugins&&a.mimeTypes.length)c=navigator.plugins["Shockwave Flash"],c&&(b=c.description.replace(/.*\s(\d+\.\d+).*/,"$1"));else try{c=new window.ActiveXObject("ShockwaveFlash.ShockwaveFlash"),c&&(b=c.GetVariable("$version"))}catch(d){}return b}(),e=function(){var a=document.createElement("div");a.innerHTML=b,a.style.backgroundColor="#FFF9D7",a.style.borderBottom="1px solid #E3C823",a.style.fontWeight="bold",a.style.lineHeight="30px",a.style.textAlign="center",a.style.color="#f60",document.body.insertBefore(a,c)},f=d?d.match(/\d+/g):-1,g=f.length>0?f.join("."):0;return!g||parseInt(f[0],10)<a?(e(),!1):!0}(9);
-</script> 
-
-
-
-
-<div style="display:none">
-<script src='http://s95.cnzz.com/stat.php?id=921634&web_id=921634' language='JavaScript' charset='gb2312'></script>
-<script src="http://s16.cnzz.com/stat.php?id=2629111&web_id=2629111" language="JavaScript"></script>
-</div>
-
-
-<div style="background:#fff; margin: 0 auto;display:none;"><font style="font-size:12px; color:#fff;">Host: , Process All 0.041s Memory:3034.35k <br></font></div>
-<div style="position:absolute;left:0;bottom:0;z-index:0;">
-	<object id="plugin0" type="application/x-sharetingplugin" width="1" height="1">
-	</object>
-</div>
-
-</body>
+</script>  
+ </body>
 </html>
